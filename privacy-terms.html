@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy &amp; Terms of Use — Cohealo</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Inter+Tight:wght@600;700&family=Inter:wght@600;700&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --dark-blue: #0d1b2e;
+    --mid-blue: #2d4a7a;
+    --light-blue: #8ea8c3;
+    --pale-blue: #d4e1ef;
+    --bg-gray: #edf1f7;
+    --text-dark: #0d1a33;
+    --text-mid: #3d4a66;
+    --text-light: #7a869a;
+    --border: #c5d3e0;
+    --white: #ffffff;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; color: var(--text-dark); background: #fff; }
+  a { text-decoration: none; color: inherit; }
+  h1, h2, h3, h4 { font-family: 'Inter', sans-serif; }
+
+  .topbar { background: #1a2340; padding: 7px 60px; display: flex; justify-content: flex-end; gap: 24px; font-size: 12px; }
+  .topbar a { color: #8fa8cc; transition: color .2s; }
+  .topbar a:hover { color: #fff; }
+
+  nav { background: #fff; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 60px; height: 64px; position: sticky; top: 0; z-index: 100; }
+  .nav-logo img { height: 34px; }
+  .nav-left { display: flex; align-items: center; gap: 48px; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; color: var(--text-mid); }
+  .nav-links a { transition: color .2s; }
+  .nav-links a:hover { color: var(--mid-blue); }
+  .nav-company { font-size: 14px; font-weight: 500; color: var(--text-mid); transition: color .2s; }
+  .nav-company:hover { color: var(--mid-blue); }
+
+  .hero { background: linear-gradient(150deg, #0d1b2e 0%, #2d4a7a 55%, #5b7fa6 100%); padding: 80px 60px 72px; text-align: center; position: relative; overflow: hidden; }
+  .hero-tag { font-size: 11px; font-weight: 600; color: #7bbcf5; text-transform: uppercase; letter-spacing: .14em; margin-bottom: 20px; position: relative; }
+  .hero h1 { font-size: 32px; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 16px; position: relative; max-width: 700px; margin-left: auto; margin-right: auto; }
+  .hero p { font-size: 15px; color: #b8d8f4; line-height: 1.65; max-width: 580px; margin: 0 auto 8px; position: relative; }
+  .hero .updated { font-size: 13px; color: #7bbcf5; margin-top: 20px; }
+
+  .legal-wrap { max-width: 820px; margin: 0 auto; padding: 64px 60px 96px; }
+  .legal-note { background: var(--pale-blue); border-left: 3px solid var(--mid-blue); border-radius: 8px; padding: 18px 22px; font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 56px; }
+  .legal-note strong { color: var(--dark-blue); }
+
+  .legal-section { margin-bottom: 44px; scroll-margin-top: 84px; }
+  .legal-section > h2 { font-size: 22px; font-weight: 700; color: var(--text-dark); padding-bottom: 12px; margin-bottom: 20px; border-bottom: 2px solid var(--pale-blue); }
+  .legal-section .lede { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 24px; }
+
+  .clause { margin-bottom: 22px; scroll-margin-top: 84px; }
+  .clause h3 { font-size: 15px; font-weight: 700; color: var(--dark-blue); margin-bottom: 8px; }
+  .clause p { font-size: 13.5px; color: var(--text-mid); line-height: 1.7; margin-bottom: 8px; }
+  .clause ul { margin: 8px 0 8px 20px; }
+  .clause li { font-size: 13.5px; color: var(--text-mid); line-height: 1.7; margin-bottom: 5px; }
+  .clause li strong { color: var(--text-dark); }
+
+  .highlight-box { background: var(--bg-gray); border: 1px solid var(--border); border-radius: 12px; padding: 22px 26px; margin: 20px 0; }
+  .highlight-box h4 { font-size: 13px; font-weight: 700; color: var(--mid-blue); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 12px; }
+  .highlight-box ul { margin: 0 0 0 18px; }
+  .highlight-box li { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 6px; }
+
+  .contact-card { background: var(--dark-blue); border-radius: 14px; padding: 40px; color: #fff; }
+  .contact-card h2 { font-size: 26px; font-weight: 700; margin-bottom: 12px; }
+  .contact-card p { font-size: 15px; color: #b8d8f4; line-height: 1.75; margin-bottom: 20px; }
+  .contact-card .detail { font-size: 14px; color: #fff; margin-bottom: 6px; }
+  .contact-card .detail span { color: #7bbcf5; font-weight: 600; }
+
+  footer { background: #0d1a33; padding: 40px 60px; }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; max-width: 1060px; margin: 0 auto; }
+  .footer-logo img { height: 28px; filter: brightness(0) invert(1); opacity: .85; }
+  .footer-links { display: flex; gap: 28px; font-size: 13px; }
+  .footer-links a { color: #6a8bb0; transition: color .2s; }
+  .footer-links a:hover { color: #fff; }
+  .footer-social { display: flex; gap: 16px; color: #6a8bb0; font-size: 20px; }
+
+  .draft-badge { position: fixed; bottom: 24px; right: 24px; background: var(--mid-blue); color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; z-index: 999; box-shadow: 0 4px 16px rgba(0,84,166,.4); }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 56px 24px; }
+    .hero h1 { font-size: 30px; }
+    .legal-wrap { padding: 48px 24px 72px; }
+    .topbar { padding: 7px 24px; }
+    footer { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="draft-badge">⚡ Claude's Version — Draft, Legal Review Pending</div>
+
+<div class="topbar">
+  <a href="#">Careers</a>
+  <a href="https://app.cohealo.com" target="_new">Sign In</a>
+</div>
+
+<nav>
+  <div class="nav-left">
+    <div class="nav-logo">
+      <a href="index.html">
+        <img src="https://cohealo.com/wp-content/uploads/2019/01/cohealo-logo.png" alt="Cohealo" />
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Equipment Sharing</a>
+      <a href="equipment-tracking.html">Utilization Tracking</a>
+      <a href="capital-planning.html">Capital Planning</a>
+    </div>
+  </div>
+  <a href="company.html" class="nav-company">Company</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">Legal</div>
+  <h1>Privacy Policy &amp; Terms of Use</h1>
+  <p>How Cohealo collects and uses information through this website, and the terms that govern your use of it.</p>
+  <div class="updated">Last updated: July 2026</div>
+</div>
+
+<div class="legal-wrap">
+
+  <div class="legal-note">
+    <strong>Plain-language summary:</strong> We collect the information you give us (like your name and business email) to respond to you, and basic technical data to keep this site running. We do not sell your information, we do not use it to build advertising profiles, and we do not track you across other websites. Full details below.
+  </div>
+
+  <!-- ================= PRIVACY POLICY ================= -->
+  <div class="legal-section" id="privacy">
+    <h2>Privacy Policy</h2>
+    <p class="lede">Cohealo, Inc. ("Cohealo," "we," "us") operates this website. This Privacy Policy explains what information we collect here, how we use it, and your choices. This website does not collect or process protected health information (PHI) — visiting or submitting a form here never involves patient-level health data.</p>
+
+    <div class="clause" id="info-we-collect">
+      <h3>1. Information We Collect</h3>
+      <p><strong>Information you provide.</strong> If you contact us, request a demo, or fill out a form, we may ask for your name, business email, company, job title, and phone number — only what we need to respond to you.</p>
+      <p><strong>Information collected automatically.</strong> Like most sites, we automatically log standard technical data (IP address, browser type, device type, pages viewed) through basic analytics. This helps us understand site usage and keep it secure — it does not identify you personally.</p>
+    </div>
+
+    <div class="clause" id="how-we-use">
+      <h3>2. How We Use Information</h3>
+      <ul>
+        <li>Respond to inquiries and requests, including demos.</li>
+        <li>Communicate with current or prospective customers about our products.</li>
+        <li>Operate, secure, and improve this website.</li>
+        <li>Comply with applicable laws.</li>
+      </ul>
+      <div class="highlight-box">
+        <h4>What we don't do</h4>
+        <ul>
+          <li>Build advertising profiles from site data.</li>
+          <li>Use cookies to track you across other websites.</li>
+          <li>Cold-call or solicit contacts who haven't engaged with us.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="clause" id="cookies">
+      <h3>3. Cookies &amp; Analytics</h3>
+      <p>We use limited, first-party analytics cookies to understand aggregate traffic — no third-party advertising cookies, no cross-site retargeting. You can block or delete cookies in your browser settings; this may limit some functionality but won't prevent you from using the site.</p>
+    </div>
+
+    <div class="clause" id="sharing">
+      <h3>4. How We Share Information</h3>
+      <p>We do not sell, rent, or trade your personal information.</p>
+      <p>We share information only with service providers who help us run this site or our business (hosting, email, CRM), bound by confidentiality and limited to that purpose. We may also disclose information if required by law, to protect our rights or safety, or as part of a merger or sale of company assets — with notice provided if that happens.</p>
+    </div>
+
+    <div class="clause" id="security">
+      <h3>5. Data Security</h3>
+      <p>We maintain reasonable safeguards to protect the information we collect. No method of transmission or storage is completely secure, and we can't guarantee absolute security.</p>
+    </div>
+
+    <div class="clause" id="retention">
+      <h3>6. Data Retention</h3>
+      <p>We keep your information only as long as needed to respond to you, maintain the business relationship, or comply with law — then delete or anonymize it.</p>
+    </div>
+
+    <div class="clause" id="your-rights">
+      <h3>7. Your Choices &amp; Rights</h3>
+      <ul>
+        <li>Opt out of marketing emails anytime via the unsubscribe link or by contacting us.</li>
+        <li>Ask what information we hold about you, and request correction or deletion.</li>
+      </ul>
+      <p>Contact <strong><a href="mailto:info@cohealo.com">info@cohealo.com</a></strong> to exercise these choices.</p>
+    </div>
+
+    <div class="clause" id="children">
+      <h3>8. Children's Privacy</h3>
+      <p>This site is not directed to individuals under 16, and we do not knowingly collect information from children. If you believe a child has provided us with personal information, contact us and we'll remove it.</p>
+    </div>
+
+    <div class="clause" id="ccpa">
+      <h3>9. California Privacy Rights</h3>
+      <p>California residents may request the categories of personal information we've collected and how it's used. We do not sell or share personal information for cross-context behavioral advertising. Contact <strong><a href="mailto:info@cohealo.com">info@cohealo.com</a></strong> to make a request.</p>
+    </div>
+
+    <div class="clause" id="storage">
+      <h3>10. Where Information Is Stored</h3>
+      <p>Information collected here is stored securely with reputable cloud infrastructure providers in the United States.</p>
+    </div>
+
+    <div class="clause" id="privacy-changes">
+      <h3>11. Changes to This Policy</h3>
+      <p>We may update this policy from time to time. Material changes will update the "Last updated" date above.</p>
+    </div>
+  </div>
+
+  <!-- ================= TERMS OF USE ================= -->
+  <div class="legal-section" id="terms">
+    <h2>Terms of Use</h2>
+    <p class="lede">These Terms govern your access to and use of this website. By using this site, you agree to them. If you do not agree, please do not use this site.</p>
+
+    <div class="clause" id="acceptance">
+      <h3>1. Acceptance of Terms</h3>
+      <p>This website, cohealo.com (the "Site"), is provided by Cohealo, Inc. By accessing or using the Site, you agree to be bound by these Terms, all applicable laws and regulations, and you agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these Terms, you are prohibited from using or accessing the Site. The materials on the Site are protected by applicable copyright and trademark law. These Terms may be updated from time to time as described in Section 9.</p>
+    </div>
+
+    <div class="clause" id="license">
+      <h3>2. Use of This Site</h3>
+      <p>Subject to your compliance with these Terms, Cohealo grants you a limited, non-exclusive, non-transferable license to view and temporarily download materials from this Site for personal, informational, non-commercial use only, provided you retain all copyright and other proprietary notices. This is a grant of a license, not a transfer of title, and under this license you may not:</p>
+      <ul>
+        <li>Modify, copy, or create derivative works from the materials;</li>
+        <li>Use the materials for any commercial purpose, or for any public display, commercial or non-commercial;</li>
+        <li>Attempt to decompile or reverse engineer any software contained on the Site;</li>
+        <li>Remove any copyright, trademark, or other proprietary notation from the materials; or</li>
+        <li>Transfer the materials to another person or "mirror" them on any other server.</li>
+      </ul>
+      <p>This license terminates automatically if you violate any of these restrictions, and Cohealo may terminate it at any time. Upon termination, you must destroy any downloaded materials in your possession, whether in electronic or printed form.</p>
+    </div>
+
+    <div class="clause" id="ip">
+      <h3>3. Intellectual Property</h3>
+      <p>Content, trademarks, and logos on this Site are owned by Cohealo, Inc. or our licensors and protected by applicable law. Nothing here grants any license to use our trademarks without written consent.</p>
+    </div>
+
+    <div class="clause" id="no-advice">
+      <h3>4. No Professional or Contractual Advice</h3>
+      <p>Content here is for general informational purposes only and isn't a binding offer or a substitute for the specific terms of any customer agreement. Our obligations to customers are governed solely by the written agreements under which our products and services are provided.</p>
+    </div>
+
+    <div class="clause" id="disclaimer">
+      <h3>5. Disclaimers</h3>
+      <p>This Site is provided "as is" without warranties of any kind, express or implied, including merchantability, fitness for a particular purpose, or non-infringement. We don't warrant the Site will be uninterrupted, error-free, or fully accurate, and may update content anytime without notice.</p>
+    </div>
+
+    <div class="clause" id="liability">
+      <h3>6. Limitation of Liability</h3>
+      <p>To the fullest extent permitted by law, in no event shall Cohealo or its suppliers be liable for any damages — including, without limitation, damages for loss of data or profit, or due to business interruption — arising out of your use or inability to use the materials on this Site, even if Cohealo has been notified orally or in writing of the possibility of such damage. Some jurisdictions don't allow these limitations, so they may not apply to you.</p>
+    </div>
+
+    <div class="clause" id="links">
+      <h3>7. Third-Party Links</h3>
+      <p>This Site may link to third-party websites for convenience. We don't control and aren't responsible for their content or practices. Accessing them is at your own risk.</p>
+    </div>
+
+    <div class="clause" id="governing-law">
+      <h3>8. Governing Law</h3>
+      <p>Cohealo, Inc. is based in Massachusetts, and these Terms are governed by Massachusetts law, without regard to conflict-of-law principles. We make no representation that this Site is appropriate for use outside the United States.</p>
+    </div>
+
+    <div class="clause" id="terms-changes">
+      <h3>9. Changes to These Terms</h3>
+      <p>We may revise these Terms at any time by updating this page. Continued use of the Site after changes are posted means you accept the revised terms.</p>
+    </div>
+  </div>
+
+  <!-- ================= CONTACT ================= -->
+  <div id="contact">
+    <div class="contact-card">
+      <h2>Questions about this policy?</h2>
+      <p>If you have questions about this Privacy Policy, our Terms of Use, or how we handle information, reach out any time.</p>
+      <div class="detail"><span>Email:</span> <a href="mailto:info@cohealo.com">info@cohealo.com</a></div>
+      <div class="detail"><span>Phone:</span> <a href="tel:8556926432">855-692-6432</a></div>
+      <div class="detail"><span>Mail:</span> Cohealo, Inc., 15 Lincoln Street, STE 384, Wakefield, MA 01880</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <a href="index.html">
+        <img src="https://cohealo.com/wp-content/uploads/2019/01/cohealo-logo.png" />
+      </a>
+    </div>
+    <div class="footer-links">
+      <a href="contact-us.html">Contact Us</a>
+      <a href="tel:8556926432">855-692-6432</a>
+    </div>
+    <div class="footer-social">
+      <i data-lucide="linkedin"></i>
+      <i data-lucide="twitter"></i>
+    </div>
+  </div>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>

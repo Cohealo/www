@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Equipment Tracking — Cohealo</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Inter+Tight:wght@600;700&family=Inter:wght@600;700&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --dark-blue: #0d1b2e;
+    --mid-blue: #2d4a7a;
+    --light-blue: #5bc2f4;
+    --pale-blue: #d4e1ef;
+    --bg-gray: #edf1f7;
+    --text-dark: #0d1a33;
+    --text-mid: #3d4a66;
+    --text-light: #7a869a;
+    --border: #d4e1ef;
+    --coral: #e8705a;
+    --white: #ffffff;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; color: var(--text-dark); background: #fff; }
+  a { text-decoration: none; color: inherit; }
+  h1, h2, h3, h4 { font-family: 'Inter', sans-serif; }
+
+  /* ── TOPBAR ── */
+  .topbar { background: #1a2340; padding: 7px 60px; display: flex; justify-content: flex-end; gap: 24px; font-size: 12px; }
+  .topbar a { color: #8fa8cc; transition: color .2s; }
+  .topbar a:hover { color: #fff; }
+
+  nav { background: #fff; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 60px; height: 64px; position: sticky; top: 0; z-index: 100; }
+  .nav-logo img { height: 34px; }
+  .nav-left { display: flex; align-items: center; gap: 48px; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; color: var(--text-mid); }
+  .nav-links a { transition: color .2s; }
+  .nav-links a:hover { color: var(--mid-blue); }
+  .nav-company { font-size: 14px; font-weight: 500; color: var(--text-mid); transition: color .2s; }
+  .nav-company:hover { color: var(--mid-blue); }
+
+  .hero { background: linear-gradient(150deg, #0d1b2e 0%, #2d4a7a 55%, #5b7fa6 100%); padding: 80px 60px 72px; position: relative; overflow: hidden; }
+  .hero-inner { max-width: 920px; margin: 0 auto; text-align: center; }
+  .hero-tag { font-size: 11px; font-weight: 600; color: #7bbcf5; text-transform: uppercase; letter-spacing: .14em; margin-bottom: 18px; }
+  .hero h1 { font-size: 46px; font-weight: 700; color: #fff; line-height: 1.18; margin-bottom: 20px; }
+  .hero h1 em { font-style: normal; color: var(--light-blue); }
+  .hero p { font-size: 17px; color: #b8d8f4; line-height: 1.75; max-width: 620px; margin: 0 auto 32px; }
+  .hero-btn { display: inline-block; background: var(--coral); color: #fff; padding: 15px 34px; border-radius: 8px; font-size: 15px; font-weight: 700; }
+
+  section { padding: 80px 60px; }
+  .section-inner { max-width: 1080px; margin: 0 auto; }
+  .eyebrow { font-size: 11px; font-weight: 600; color: var(--mid-blue); text-transform: uppercase; letter-spacing: .12em; margin-bottom: 10px; }
+  .section-title { font-size: 34px; font-weight: 700; color: var(--text-dark); line-height: 1.25; margin-bottom: 16px; }
+  .section-sub { font-size: 16px; color: var(--text-mid); line-height: 1.75; }
+  .center { text-align: center; max-width: 640px; margin-left: auto; margin-right: auto; }
+
+  .feature-section { background: #fff; }
+  .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin-top: 48px; }
+  .feature-card { background: var(--bg-gray); border-radius: 14px; padding: 32px; }
+  .feature-icon { width: 48px; height: 48px; background: var(--pale-blue); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: var(--mid-blue); margin-bottom: 20px; }
+  .feature-card h3 { font-size: 18px; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; }
+  .feature-card p { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+
+  .how-section { background: var(--bg-gray); }
+  .how-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; }
+  .how-step { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 28px; position: relative; }
+  .how-num { font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 700; color: var(--coral); margin-bottom: 14px; }
+  .how-step h4 { font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
+  .how-step p { font-size: 13px; color: var(--text-mid); line-height: 1.7; }
+
+  .stake-section { background: #fff; }
+  .stake-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; }
+  .stake-card { background: var(--bg-gray); border-radius: 14px; padding: 28px; }
+  .stake-label { font-family: 'Inter Tight', sans-serif; font-size: 12px; font-weight: 700; color: var(--mid-blue); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
+  .stake-card h4 { font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; line-height: 1.35; }
+  .stake-card p { font-size: 13px; color: var(--text-mid); line-height: 1.7; }
+
+  .wp-section { background: linear-gradient(135deg, #2d4a7a, #5b7fa6); padding: 64px 60px; }
+  .wp-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; gap: 48px; }
+  .wp-text { flex: 1.3; }
+  .wp-stat { font-family: 'Inter Tight', sans-serif; font-size: 56px; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 8px; }
+  .wp-stat-label { font-size: 14px; color: #b8d8f4; margin-bottom: 24px; }
+  .wp-text h3 { font-size: 24px; font-weight: 700; color: #fff; line-height: 1.4; margin-bottom: 16px; }
+  .wp-text p { font-size: 14px; color: #b8d8f4; line-height: 1.7; margin-bottom: 24px; }
+  .wp-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--coral); color: #fff; padding: 14px 28px; border-radius: 8px; font-size: 14px; font-weight: 700; }
+
+  .resources-section { background: #fff; }
+  .res-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+  .res-card { border: 1px solid var(--border); border-radius: 14px; padding: 24px; transition: box-shadow .2s; }
+  .res-card:hover { box-shadow: 0 8px 32px rgba(45,74,122,.1); }
+  .res-tag { font-size: 10px; font-weight: 700; color: var(--mid-blue); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 10px; }
+  .res-card h4 { font-size: 15px; font-weight: 600; color: var(--text-dark); line-height: 1.5; margin-bottom: 12px; }
+  .res-card p { font-size: 13px; color: var(--text-mid); line-height: 1.6; margin-bottom: 14px; }
+  .res-link { font-size: 13px; color: var(--mid-blue); font-weight: 600; }
+
+  .cta-band { background: var(--dark-blue); padding: 64px 60px; text-align: center; }
+  .cta-band h2 { font-family: 'Inter', sans-serif; font-size: 30px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+  .cta-band p { font-size: 15px; color: #90bde0; margin-bottom: 28px; }
+  .cta-form { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .cta-form input { padding: 13px 18px; border-radius: 6px; border: none; font-size: 14px; width: 260px; font-family: 'DM Sans', sans-serif; }
+  .cta-form button { background: var(--coral); color: #fff; padding: 13px 28px; border-radius: 6px; font-size: 14px; font-weight: 700; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+
+  footer { background: var(--dark-blue); padding: 40px 60px; border-top: 1px solid rgba(255,255,255,.08); }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; max-width: 1080px; margin: 0 auto; }
+  .footer-logo img { height: 28px; opacity: .85; }
+  .footer-links { display: flex; gap: 28px; font-size: 13px; }
+  .footer-links a { color: #6a8bb0; transition: color .2s; }
+  .footer-links a:hover { color: #fff; }
+  .footer-social { display: flex; gap: 16px; color: #6a8bb0; font-size: 20px; }
+
+  @media (max-width: 900px) {
+    .feature-grid, .how-steps, .res-grid, .stake-grid { grid-template-columns: 1fr; }
+    .wp-inner { flex-direction: column; text-align: center; }
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hero, section { padding: 56px 24px; }
+    .hero h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="#">Careers</a>
+  <a href="https://app.cohealo.com" target="_new">Sign In</a>
+</div>  
+
+<nav>
+  <div class="nav-left">
+    <div class="nav-logo">
+      <a href="index.html">
+        <img src="https://cohealo.com/wp-content/uploads/2019/01/cohealo-logo.png" alt="Cohealo" />
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Equipment Sharing</a>
+      <a href="equipment-tracking.html">Utilization Tracking</a>
+      <a href="capital-planning.html">Capital Planning</a>
+    </div>
+  </div>
+  <a href="company.html" class="nav-company">Company</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Equipment tracking</div>
+    <h1>Take control of your most<br><em>critical capital assets</em></h1>
+    <p>Tracking equipment utilization across facilities and service lines unlocks insights to avoid new capital purchases, reduce equipment rentals, identify opportunities to relocate assets between facilities, and identify opportunities to off-board underused assets.</p>
+  </div>
+</div>
+
+<!-- LARGE STATEMENT -->
+<section style="background:#fff; padding:48px 60px 0;">
+  <div class="section-inner" style="text-align:center;">
+    <h2 style="font-family:'Inter', sans-serif; font-size:32px; font-weight:700; color:var(--text-dark); line-height:1.3; max-width:760px; margin:0 auto;">Validate or refute the case for new equipment purchases.</h2>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="section-inner">
+    <div class="eyebrow center" style="text-align:center">How it works</div>
+    <h2 class="section-title center" style="text-align:center">Four data sources. One accurate picture.</h2>
+    <p class="section-sub center">No manual data entry. No dedicated time from clinical staff. Cohealo combines what your systems already know with what only your people do.</p>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="how-num">Case data import</div>
+        <h4>Your procedural schedule</h4>
+        <p>A light-weight, twice-daily export from your scheduling system — procedure, physician, date, time, and location. No PHI or PII required.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-num">Equipment inventory</div>
+        <h4>What you actually own</h4>
+        <p>Capital equipment counts by make and model, validated against your asset register and the realities your clinical staff see on the ground.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-num">Physician preferences</div>
+        <h4>What each case requires</h4>
+        <p>Business logic mapping procedures to the equipment they require — specific to each facility, service line, and individual physician.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-num">Local knowledge</div>
+        <h4>What only your team knows</h4>
+        <p>Departmental review to verify accuracy and surface the idiosyncrasies no data feed alone would catch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAKEHOLDER VALUE -->
+<section class="stake-section">
+  <div class="section-inner">
+    <div class="eyebrow center" style="text-align:center">Who uses it</div>
+    <h2 class="section-title center" style="text-align:center">Built for every team that touches a capital request.</h2>
+    <p class="section-sub center">Finance, supply chain, value analysis, and HTM all rely on the same utilization data — just for different decisions.</p>
+    <div class="stake-grid">
+      <div class="stake-card">
+        <div class="stake-label">Finance</div>
+        <h4>Justify every six-figure purchase</h4>
+        <p>Check whether existing equipment already has the idle capacity to cover demand before signing off on another $250,000 ultrasound or $500,000 procedural device.</p>
+      </div>
+      <div class="stake-card">
+        <div class="stake-label">Supply Chain</div>
+        <h4>Size the fleet with evidence, not habit</h4>
+        <p>Idle-time and peak-demand analysis show when relocating equipment beats buying more — and when a scheduling tweak fixes a pinch point outright.</p>
+      </div>
+      <div class="stake-card">
+        <div class="stake-label">Value Analysis</div>
+        <h4>Prioritize competing capital requests</h4>
+        <p>Compare a request against documented usage, existing capacity, and rental history to see what's truly necessary and what should be replaced first.</p>
+      </div>
+      <div class="stake-card">
+        <div class="stake-label">HTM</div>
+        <h4>Shrink the inspection and PM burden</h4>
+        <p>A smaller, better-managed fleet means fewer devices to service, lower parts and contract spend, and more technician time for what matters clinically.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHITE PAPER -->
+<div class="wp-section">
+  <div class="wp-inner">
+    <div class="wp-text" style="flex: 0.9; text-align: center;">
+      <h3 style="font-size: 22px;">Tracking is step one.</h3>
+      <div class="wp-stat-label">Acting on the data — relocating and cross-scheduling equipment, not just monitoring it — is where the larger savings show up.</div>
+    </div>
+    <div class="wp-text">
+      <h3>Utilization tracking is the first step. Here's the rest of the roadmap.</h3>
+      <p>Our white paper walks through how finance, supply chain, value analysis, and HTM teams each put utilization data to work — and why organizations that act on it, relocating and cross-scheduling equipment instead of just monitoring it, tend to see meaningfully greater savings than tracking and analysis deliver on their own.</p>
+      <a href="#" class="wp-btn">Download the white paper <i data-lucide="arrow-right" style="width:16px;height:16px;"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-band">
+  <h2>Let us tell you more.</h2>
+  <p>We'll email you to start the conversation.</p>
+  <div class="cta-form">
+    <input type="text" placeholder="Your name" />
+    <input type="email" placeholder="Your work email" />
+    <button>Send</button>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <a href="index.html">
+        <img src="https://cohealo.com/wp-content/uploads/2019/01/cohealo-logo.png" alt="Cohealo" />
+      </a>
+    </div>
+    <div class="footer-links">
+      <a href="contact-us.html">Contact Us</a>
+      <a href="tel:8556926432">855-692-6432</a>
+      <a href="privacy-terms.html">Terms &amp; Privacy</a>
+    </div>
+    <div class="footer-social">
+      <i data-lucide="linkedin"></i>
+      <i data-lucide="twitter"></i>
+    </div>
+  </div>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
