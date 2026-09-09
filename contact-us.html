@@ -3,110 +3,20 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Contact Us — Cohealo</title>
+<title>Contact Us</title>
+<link rel="shortcut icon" href="images/favicon-large.png" type="image/png" />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Inter+Tight:wght@600;700&family=Inter:wght@600;700&display=swap" rel="stylesheet" />
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --dark-blue: #0d1b2e;
-    --mid-blue: #2d4a7a;
-    --light-blue: #8ea8c3;
-    --pale-blue: #d4e1ef;
-    --bg-gray: #edf1f7;
-    --text-dark: #0d1a33;
-    --text-mid: #3d4a66;
-    --text-light: #7a869a;
-    --border: #c5d3e0;
-    --white: #ffffff;
-  }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; color: var(--text-dark); background: #fff; }
-  a { text-decoration: none; color: inherit; }
-  h1, h2, h3, h4 { font-family: 'Inter', sans-serif; }
-
-  /* ── TOPBAR ── */
-  .topbar { background: #1a2340; padding: 7px 60px; display: flex; justify-content: flex-end; gap: 24px; font-size: 12px; }
-  .topbar a { color: #8fa8cc; transition: color .2s; }
-  .topbar a:hover { color: #fff; }
-
-  nav { background: #fff; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 60px; height: 64px; position: sticky; top: 0; z-index: 100; }
-  .nav-logo img { height: 34px; }
-  .nav-left { display: flex; align-items: center; gap: 48px; }
-  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; color: var(--text-mid); }
-  .nav-links a { transition: color .2s; }
-  .nav-links a:hover { color: var(--mid-blue); }
-  .nav-company { font-size: 14px; font-weight: 500; color: var(--text-mid); transition: color .2s; }
-  .nav-company:hover { color: var(--mid-blue); }
-
-  .hero { background: linear-gradient(150deg, #0d1b2e 0%, #2d4a7a 55%, #5b7fa6 100%); padding: 80px 60px 72px; text-align: center; position: relative; overflow: hidden; }
-  .hero-tag { font-size: 11px; font-weight: 600; color: #7bbcf5; text-transform: uppercase; letter-spacing: .14em; margin-bottom: 20px; }
-  .hero h1 { font-size: 38px; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 14px; }
-  .hero p { font-size: 16px; color: #b8d8f4; line-height: 1.7; max-width: 560px; margin: 0 auto; }
-
-  section { padding: 80px 60px; }
-  .section-inner { max-width: 1060px; margin: 0 auto; }
-
-  /* ── FORM ── */
-  .contact-wrap { display: flex; gap: 64px; max-width: 1060px; margin: 0 auto; }
-  .contact-panel { flex: 1; }
-  .form-row { margin-bottom: 18px; }
-  .form-lead { font-size: 13px; font-weight: 700; color: var(--text-dark); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 14px; padding-top: 16px; border-top: 1px solid var(--border); }
-  .form-row label { display: block; font-size: 13px; font-weight: 600; color: var(--text-mid); margin-bottom: 6px; }
-  .form-row input, .form-row textarea { width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text-dark); }
-  .form-row textarea { resize: vertical; min-height: 100px; }
-  .form-row input:focus, .form-row textarea:focus { outline: none; border-color: var(--mid-blue); }
-  .form-submit { display: inline-block; background: var(--mid-blue); color: #fff; padding: 15px 36px; border-radius: 6px; font-size: 16px; font-weight: 700; border: none; cursor: pointer; transition: background .2s, transform .2s, box-shadow .2s; box-shadow: 0 4px 14px rgba(0,84,166,.25); }
-  .form-submit:hover { background: #004090; transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,84,166,.35); }
-
-  /* ── TWO-COLUMN INFO ── */
-  .info-card { background: var(--bg-gray); border: 1px solid var(--border); border-radius: 14px; padding: 32px; transition: box-shadow .2s, transform .2s; }
-  .info-card:hover { box-shadow: 0 10px 32px rgba(0,84,166,.1); transform: translateY(-3px); }
-  .info-icon { width: 48px; height: 48px; background: var(--pale-blue); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: var(--mid-blue); margin-bottom: 16px; }
-  .info-card h3 { font-size: 18px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
-  .info-card p { font-size: 13px; color: var(--text-mid); line-height: 1.7; margin-bottom: 10px; }
-  .info-card a.info-link { font-size: 17px; font-weight: 700; color: var(--mid-blue); }
-  .info-card a.info-link:hover { text-decoration: underline; }
-
-  /* ── HQ / MAP ── */
-  .hq-section { background: var(--bg-gray); }
-  .hq-wrap { max-width: 1060px; margin: 0 auto; text-align: center; }
-  .hq-text { flex: 1; }
-  .hq-text h3 { font-size: 20px; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; }
-  .hq-text p { font-size: 14px; color: var(--text-mid); line-height: 1.9; }
-
-  footer { background: #0d1a33; padding: 40px 60px; }
-  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; max-width: 1060px; margin: 0 auto; }
-  .footer-logo img { height: 28px; filter: brightness(0) invert(1); opacity: .85; }
-  .footer-links { display: flex; gap: 28px; font-size: 13px; }
-  .footer-links a { color: #6a8bb0; transition: color .2s; }
-  .footer-links a:hover { color: #fff; }
-  .footer-social { display: flex; gap: 16px; color: #6a8bb0; font-size: 20px; }
-
-  @media (max-width: 900px) {
-    .contact-wrap, .hq-wrap { flex-direction: column; }
-    nav { padding: 0 24px; }
-    .nav-links { display: none; }
-    section { padding: 56px 28px; }
-    .hero { padding: 60px 28px; }
-    .hero h1 { font-size: 28px; }
-    footer { padding: 32px 24px; }
-    .topbar { padding: 7px 24px; }
-  }
-</style>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body>
-
-<div class="topbar">
-  <a href="#">Careers</a>
-  <a href="https://app.cohealo.com" target="_new">Sign In</a>
-</div>
+<body class="pg-contact-us">
 
 <nav>
   <div class="nav-left">
     <div class="nav-logo">
       <a href="index.html">
-        <img src="https://cohealo.com/wp-content/uploads/2019/01/cohealo-logo.png" alt="Cohealo" />
+        <img src="images/cohealo-logo.png" alt="Cohealo" />
       </a>
     </div>
     <div class="nav-links">
@@ -128,81 +38,202 @@
     <div class="info-card contact-panel">
       <div class="info-icon"><i data-lucide="handshake"></i></div>
       <h3>Considering a partnership with us?</h3>
-      <p style="font-size:13px;color:var(--text-mid);margin-bottom:6px;">Learn more about our platform and services and get a free ROI assessment.</p>
-      <form>
+      <p>Learn more about our platform and services and get a free ROI assessment.</p>
+      <form id="partnershipForm" onsubmit="return false;">
         <div class="form-row">
-          <label for="p-name">Name</label>
-          <input type="text" id="p-name" name="name" />
+          <div class="form-group">
+            <label for="p-first-name">First Name <span class="req">*</span></label>
+            <input type="text" id="p-first-name" name="first_name" />
+            <div class="field-error" id="err-p-first-name">Please enter your first name.</div>
+          </div>
+          <div class="form-group">
+            <label for="p-last-name">Last Name <span class="req">*</span></label>
+            <input type="text" id="p-last-name" name="last_name" />
+            <div class="field-error" id="err-p-last-name">Please enter your last name.</div>
+          </div>
         </div>
+
         <div class="form-row">
-          <label for="p-email">Work Email</label>
-          <input type="email" id="p-email" name="email" />
+          <div class="form-group">
+            <label for="p-email">Work Email <span class="req">*</span></label>
+            <input type="email" id="p-email" name="email" />
+            <div class="field-error" id="err-p-email">Please enter a valid work email.</div>
+          </div>
+          <div class="form-group">
+            <label for="p-phone">Phone Number</label>
+            <input type="tel" id="p-phone" name="phone" />
+          </div>
         </div>
+
         <div class="form-row">
-          <label for="p-org">Health system/facility name</label>
-          <input type="text" id="p-org" name="organization" />
+          <div class="form-group">
+            <label for="p-org">Health system/facility name <span class="req">*</span></label>
+            <input type="text" id="p-org" name="organization" />
+            <div class="field-error" id="err-p-org">Please enter your organization.</div>
+          </div>
+          <div class="form-group">
+            <label for="p-role">Job Title</label>
+            <input type="text" id="p-role" name="job_title" />
+          </div>
         </div>
-        <button type="submit" class="form-submit">Submit</button>
+
+        <div class="form-row">
+          <div class="form-group full">
+            <label for="p-interest">Area of Interest</label>
+            <select id="p-interest" name="interest">
+              <option value="">- Select one -</option>
+              <option>Equipment Tracking</option>
+              <option>Equipment Sharing</option>
+              <option>Capital Planning</option>
+              <option>General Inquiry</option>
+              <option>Customer Support</option>
+              <option>Media/Press</option>
+              <option>Careers</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group full">
+            <label for="p-message">Message <span class="req">*</span></label>
+            <textarea id="p-message" name="message" placeholder="Tell us a bit about your organization and what you're looking for…"></textarea>
+            <div class="field-error" id="err-p-message">Please include a message.</div>
+          </div>
+        </div>
+
+        <p class="form-note"><span class="req">*</span> Required</p>
+        <button type="button" class="form-submit" id="partnershipSubmitBtn" onclick="submitPartnershipForm()">
+          <span class="spinner" id="partnershipSpinner"></span>
+          <span id="partnershipBtnLabel">Submit</span>
+        </button>
       </form>
+
+      <div class="alert alert-success" id="partnershipSuccessMsg">
+        <h4>Message sent</h4>
+        <p>Thanks for reaching out; someone from our team will follow up shortly.</p>
+      </div>
+
+      <div class="alert alert-error" id="partnershipErrorMsg">
+        <h4>Delivery failed</h4>
+        <p id="partnershipErrorDetail">Something went wrong. Please try again or email us directly at <a href="mailto:info@cohealo.com">info@cohealo.com</a>.</p>
+      </div>
     </div>
 
-    <div class="info-card contact-panel">
-      <div class="info-icon"><i data-lucide="life-buoy"></i></div>
-      <h3>Customers</h3>
-      <p style="font-size:13px;color:var(--text-mid);margin-bottom:6px;">&nbsp;</p>
-      <p style="font-size:13px;color:var(--text-mid);margin-bottom:6px;">For time-sensitive matters, call or text our support team at<br/>
-        <a href="tel:8556926432">855-692-6432</a></p>
-      <p style="font-size:13px;color:var(--text-mid);margin-bottom:14px;padding-top:16px;border-top:1px solid var(--border);">For all other matters send a note to our support team below.</p>
-      <form>
-        <div class="form-row">
-          <label for="c-name">Name</label>
-          <input type="text" id="c-name" name="name" />
-        </div>
-        <div class="form-row">
-          <label for="c-email">Work Email</label>
-          <input type="email" id="c-email" name="email" />
-        </div>
-        <div class="form-row">
-          <label for="c-org">Health system/facility name</label>
-          <input type="text" id="c-org" name="organization" />
-        </div>
-        <button type="submit" class="form-submit">Submit</button>
-      </form>
+    <div class="contact-panel contact-panel-customers">
+      <div class="info-card">
+        <h3>Customers</h3>
+        <p>Call or text our support team at <a href="tel:8556926432">855-692-6432</a>.</p>
+      </div>
+
+      <div class="info-card hq-card">
+        <h3>Cohealo Headquarters</h3>
+        <a href="https://goo.gl/maps/cpKu8Hu3Rao" target="_blank" rel="noopener">
+          <img class="map-img" src="https://cohealo.com/wp-content/uploads/2023/12/map-image-wakefield.jpg" alt="Cohealo HQ, Wakefield, MA" />
+        </a>
+        <p>15 Lincoln Street, Suite 384<br />Wakefield, MA 01880</p>
+        <p><a href="mailto:info@cohealo.com">info@cohealo.com</a></p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="hq-section">
-  <div class="hq-wrap">
-    <div class="hq-text">
-      <h3>Mailing Address</h3>
-      <p>
-        15 Lincoln Street, STE 384<br />
-        Wakefield, MA 01880<br />
-        <a href="mailto:info@cohealo.com">info@cohealo.com</a>
-      </p>
-    </div>
-  </div>
-</section>
-
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">
-      <a href="index.html">
-        <img src="https://cohealo.com/wp-content/uploads/2019/01/cohealo-logo.png" />
-      </a>
-    </div>
     <div class="footer-links">
-      <a href="tel:8556926432">855-692-6432</a>
+      <a href="contact-us.html">Contact Us</a>
       <a href="privacy-terms.html">Terms &amp; Privacy</a>
-    </div>
-    <div class="footer-social">
-      <i data-lucide="linkedin"></i>
-      <i data-lucide="twitter"></i>
+      <span class="footer-copyright">Copyright &copy; <span id="footer-year"></span> Cohealo Inc. All rights reserved.</span>
     </div>
   </div>
 </footer>
 
-<script>lucide.createIcons();</script>
+<script>lucide.createIcons(); document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+
+<script>
+  // ── EmailJS configuration ──────────────────────────────────────
+  // Replace the three placeholder values below with your own,
+  // from https://dashboard.emailjs.com
+  var EMAILJS_PUBLIC_KEY  = 'tmBaw8NSc_0f4lNRJ';   // Account → API Keys
+  var EMAILJS_SERVICE_ID  = 'service_rw8dr8d';   // Email Services tab
+  var EMAILJS_TEMPLATE_ID = 'template_sycyj8q';  // Email Templates tab
+
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+  // ── Partnership form: inline validation ────────────────────────
+  ['p-first-name', 'p-last-name', 'p-email', 'p-org', 'p-message'].forEach(function (id) {
+    document.getElementById(id).addEventListener('input', function () {
+      this.classList.remove('error');
+      var err = document.getElementById('err-' + id);
+      if (err) err.classList.remove('show');
+    });
+  });
+
+  function validatePartnershipForm() {
+    var ok = true;
+    var rules = [
+      { id: 'p-first-name', test: function (v) { return v.trim().length > 0; } },
+      { id: 'p-last-name',  test: function (v) { return v.trim().length > 0; } },
+      { id: 'p-email',      test: function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); } },
+      { id: 'p-org',        test: function (v) { return v.trim().length > 0; } },
+      { id: 'p-message',    test: function (v) { return v.trim().length > 0; } }
+    ];
+    rules.forEach(function (r) {
+      var el  = document.getElementById(r.id);
+      var err = document.getElementById('err-' + r.id);
+      if (!r.test(el.value)) {
+        el.classList.add('error');
+        if (err) err.classList.add('show');
+        ok = false;
+      } else {
+        el.classList.remove('error');
+        if (err) err.classList.remove('show');
+      }
+    });
+    return ok;
+  }
+
+  function submitPartnershipForm() {
+    document.getElementById('partnershipSuccessMsg').classList.remove('show');
+    document.getElementById('partnershipErrorMsg').classList.remove('show');
+
+    if (!validatePartnershipForm()) return;
+
+    var btn     = document.getElementById('partnershipSubmitBtn');
+    var spinner = document.getElementById('partnershipSpinner');
+    var label   = document.getElementById('partnershipBtnLabel');
+    btn.disabled = true;
+    spinner.classList.add('show');
+    label.textContent = 'Sending…';
+
+    var params = {
+      first_name:   document.getElementById('p-first-name').value.trim(),
+      last_name:    document.getElementById('p-last-name').value.trim(),
+      reply_to:     document.getElementById('p-email').value.trim(),
+      phone:        document.getElementById('p-phone').value.trim()    || '-',
+      company:      document.getElementById('p-org').value.trim(),
+      job_title:    document.getElementById('p-role').value.trim()     || '-',
+      interest:     document.getElementById('p-interest').value        || '-',
+      message:      document.getElementById('p-message').value.trim()
+    };
+
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)
+      .then(function () {
+        spinner.classList.remove('show');
+        label.textContent = 'Sent ✓';
+        document.getElementById('partnershipSuccessMsg').classList.add('show');
+        document.getElementById('partnershipForm').reset();
+      })
+      .catch(function (err) {
+        btn.disabled = false;
+        spinner.classList.remove('show');
+        label.textContent = 'Submit';
+        var detail = document.getElementById('partnershipErrorDetail');
+        detail.innerHTML = 'EmailJS error (' + (err.status || err.text || JSON.stringify(err)) +
+          '). Please try again or email <a href="mailto:info@cohealo.com">info@cohealo.com</a> directly.';
+        document.getElementById('partnershipErrorMsg').classList.add('show');
+      });
+  }
+</script>
 </body>
 </html>

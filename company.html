@@ -3,135 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Company — Cohealo</title>
+<title>Company</title>
+<link rel="shortcut icon" href="images/favicon-large.png" type="image/png" />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Inter+Tight:wght@600;700&family=Inter:wght@600;700&display=swap" rel="stylesheet" />
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --dark-blue: #0d1b2e;
-    --mid-blue: #2d4a7a;
-    --light-blue: #8ea8c3;
-    --pale-blue: #d4e1ef;
-    --bg-gray: #edf1f7;
-    --text-dark: #0d1a33;
-    --text-mid: #3d4a66;
-    --text-light: #7a869a;
-    --border: #c5d3e0;
-    --white: #ffffff;
-  }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; color: var(--text-dark); background: #fff; }
-  a { text-decoration: none; color: inherit; }
-  h1, h2, h3, h4 { font-family: 'Inter', sans-serif; }
-
-  .topbar { background: #1a2340; padding: 7px 60px; display: flex; justify-content: flex-end; gap: 24px; font-size: 12px; }
-  .topbar a { color: #8fa8cc; transition: color .2s; }
-  .topbar a:hover { color: #fff; }
-
-  nav { background: #fff; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 60px; height: 64px; position: sticky; top: 0; z-index: 100; }
-  .nav-logo img { height: 34px; }
-  .nav-left { display: flex; align-items: center; gap: 48px; }
-  .nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 500; color: var(--text-mid); }
-  .nav-links a { transition: color .2s; }
-  .nav-links a:hover { color: var(--mid-blue); }
-  .nav-company { font-size: 14px; font-weight: 500; color: var(--text-mid); transition: color .2s; }
-  .nav-company:hover { color: var(--mid-blue); }
-
-  .hero { background: linear-gradient(150deg, #0d1b2e 0%, #2d4a7a 55%, #5b7fa6 100%); padding: 80px 60px 72px; text-align: center; position: relative; overflow: hidden; }
-  .hero-tag { font-size: 11px; font-weight: 600; color: #7bbcf5; text-transform: uppercase; letter-spacing: .14em; margin-bottom: 20px; position: relative; }
-  .hero h1 { font-size: 48px; font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 24px; position: relative; max-width: 800px; margin-left: auto; margin-right: auto; }
-  .hero h1 em { font-style: normal; color: var(--light-blue); }
-  .hero p { font-size: 18px; color: #b8d8f4; line-height: 1.75; max-width: 620px; margin: 0 auto 40px; position: relative; }
-  .hero-stats { display: flex; gap: 0; justify-content: center; max-width: 800px; margin: 0 auto; position: relative; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; }
-  .hero-stat { flex: 1; padding: 24px 20px; border-right: 1px solid rgba(255,255,255,.1); }
-  .hero-stat:last-child { border-right: none; }
-  .hero-stat-num { font-family: 'Inter', sans-serif; font-size: 36px; font-weight: 700; color: var(--light-blue); line-height: 1; margin-bottom: 6px; }
-  .hero-stat-label { font-size: 12px; color: #90bde0; line-height: 1.5; }
-
-  section { padding: 80px 60px; }
-  .section-inner { max-width: 1060px; margin: 0 auto; }
-  .eyebrow { font-size: 11px; font-weight: 600; color: var(--mid-blue); text-transform: uppercase; letter-spacing: .12em; margin-bottom: 10px; }
-  .section-title { font-size: 36px; font-weight: 700; color: var(--text-dark); line-height: 1.2; margin-bottom: 16px; }
-  .section-sub { font-size: 16px; color: var(--text-mid); line-height: 1.75; }
-
-  .mission { background: #fff; }
-  .mission-inner { display: flex; gap: 80px; align-items: center; max-width: 1060px; margin: 0 auto; }
-  .mission-text { flex: 1.2; }
-  .mission-quote { flex: 1; background: var(--dark-blue); border-radius: 16px; padding: 40px; position: relative; overflow: hidden; }
-  .mission-quote::before { content: '"'; font-family: 'Inter', sans-serif; font-size: 120px; font-weight: 700; color: rgba(91,194,244,.15); position: absolute; top: -10px; left: 16px; line-height: 1; }
-  .mission-quote p { font-size: 18px; color: #b8d8f4; line-height: 1.75; font-style: italic; position: relative; }
-  .mission-quote cite { display: block; margin-top: 16px; font-size: 13px; color: var(--light-blue); font-style: normal; font-weight: 600; position: relative; }
-
-  .leadership { background: var(--bg-gray); }
-  .leadership-intro { font-size: 16px; color: var(--text-mid); line-height: 1.75; max-width: 600px; margin-bottom: 48px; }
-  .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-  .team-card { background: #fff; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: box-shadow .2s, transform .2s; }
-  .team-card:hover { box-shadow: 0 8px 32px rgba(0,84,166,.1); transform: translateY(-3px); }
-  .team-photo { width: 100%; height: 200px; object-fit: cover; object-position: top; display: block; filter: grayscale(100%); transition: filter .3s; }
-  .team-card:hover .team-photo { filter: grayscale(0%); }
-  .team-body { padding: 20px; }
-  .team-name { font-size: 15px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; border-bottom: 2px solid var(--light-blue); padding-bottom: 8px; }
-  .team-title { font-size: 12px; color: var(--text-light); margin-bottom: 14px; text-transform: uppercase; letter-spacing: .06em; font-weight: 600; margin-top: 8px; }
-  .team-linkedin { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--mid-blue); font-weight: 600; }
-  .team-linkedin i { font-size: 14px; }
-  .team-linkedin:hover { text-decoration: underline; }
-
-  .values { background: #fff; }
-  .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
-  .value-card { background: var(--bg-gray); border: 1px solid var(--border); border-radius: 14px; padding: 28px; transition: box-shadow .2s, transform .2s; }
-  .value-card:hover { box-shadow: 0 8px 32px rgba(0,84,166,.08); transform: translateY(-2px); }
-  .value-icon { width: 44px; height: 44px; background: var(--pale-blue); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--mid-blue); margin-bottom: 16px; }
-  .value-card h3 { font-size: 15px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
-  .value-card p { font-size: 13px; color: var(--text-mid); line-height: 1.7; }
-
-  .join { background: linear-gradient(135deg, #2d4a7a, #5b7fa6); padding: 80px 60px; text-align: center; }
-  .join h2 { font-size: 36px; font-weight: 700; color: #fff; margin-bottom: 14px; }
-  .join p { font-size: 17px; color: #b8d8f4; margin-bottom: 36px; max-width: 520px; margin-left: auto; margin-right: auto; }
-  .join-btn { display: inline-block; background: #fff; color: var(--mid-blue); padding: 14px 36px; border-radius: 6px; font-size: 15px; font-weight: 700; transition: background .2s; }
-  .join-btn:hover { background: #e8f0fc; }
-
-  footer { background: #0d1a33; padding: 40px 60px; }
-  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; max-width: 1060px; margin: 0 auto; }
-  .footer-logo img { height: 28px; filter: brightness(0) invert(1); opacity: .85; }
-  .footer-links { display: flex; gap: 28px; font-size: 13px; }
-  .footer-links a { color: #6a8bb0; transition: color .2s; }
-  .footer-links a:hover { color: #fff; }
-  .footer-social { display: flex; gap: 16px; color: #6a8bb0; font-size: 20px; }
-
-  .draft-badge { position: fixed; bottom: 24px; right: 24px; background: var(--mid-blue); color: #fff; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; z-index: 999; box-shadow: 0 4px 16px rgba(0,84,166,.4); }
-
-  @media (max-width: 900px) {
-    .mission-inner { flex-direction: column; }
-    .values-grid { grid-template-columns: 1fr; }
-    .team-grid { grid-template-columns: repeat(2, 1fr); }
-    nav { padding: 0 24px; }
-    .nav-links { display: none; }
-    section { padding: 56px 28px; }
-    .hero { padding: 60px 28px; }
-    .hero h1 { font-size: 32px; }
-    .hero-stats { flex-direction: column; }
-    .hero-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,.1); }
-    .join { padding: 60px 28px; }
-    footer { padding: 32px 24px; }
-    .topbar { padding: 7px 24px; }
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body>
-
-<div class="draft-badge">⚡ Claude's Version — Company</div>
-
-<div class="topbar">
-  <a href="#">Careers</a>
-  <a href="https://app.cohealo.com" target="_new">Sign In</a>
-</div>
+<body class="pg-company">
 
 <nav>
   <div class="nav-left">
     <div class="nav-logo">
       <a href="index.html">
-        <img src="https://cohealo.com/wp-content/uploads/2019/01/cohealo-logo.png" alt="Cohealo" />
+        <img src="images/cohealo-logo.png" alt="Cohealo" />
       </a>
     </div>
     <div class="nav-links">
@@ -145,9 +29,8 @@
 
 <div class="hero">
   <div class="hero-tag">Our company</div>
-  <h1>We believe healthcare works better when hospitals work together — <em>as a system</em></h1>
-  <p>Cohealo is a technology and services company on a mission to make health systems financially stronger — by transforming how they track, share, and purchase capital equipment.</p>
-
+  <h1>We believe healthcare works better when hospitals work together, <em>as a system</em></h1>
+  <p>Cohealo is a technology and services company on a mission to make health systems financially stronger, by transforming how they track, share, and purchase capital equipment.</p>
 </div>
 
 <section class="mission">
@@ -155,12 +38,12 @@
     <div class="mission-text">
       <div class="eyebrow">Our mission</div>
       <h2 class="section-title">Making healthcare more affordable by drastically reducing the amount of capital equipment health systems need to buy and maintain.</h2>
-      <p class="section-sub" style="margin-bottom:20px">A hospital needs to be economically healthy so it can invest in the best clinicians, technology, and patient experiences. Cohealo was founded on the belief that collaboration among hospitals — powered by technology — could dramatically improve financial outcomes.</p>
-      <p class="section-sub">We bring transparency and collaboration into equipment management: one of the largest and most overlooked expenses for any health system. When hospitals share, everyone wins — patients included.</p>
+      <p class="section-sub">A hospital needs to be economically healthy so it can invest in the best clinicians, technology, and patient experiences. Cohealo was founded on the belief that collaboration among hospitals, powered by technology, could dramatically improve financial outcomes.</p>
+      <p class="section-sub">We bring transparency and collaboration into equipment management: one of the largest and most overlooked expenses for any health system. When hospitals share, everyone wins, patients included.</p>
     </div>
     <div class="mission-quote">
-      <p>Enabling healthcare providers to deliver the highest quality care, at the most affordable price — by bringing hospitals together around the equipment they already own.</p>
-      <cite>— Cohealo mission statement</cite>
+      <p>Enabling healthcare providers to deliver the highest quality care, at the most affordable price, by bringing hospitals together around the equipment they already own.</p>
+      <cite>- Cohealo mission statement</cite>
     </div>
   </div>
 </section>
@@ -169,10 +52,10 @@
   <div class="section-inner">
     <div class="eyebrow">The team</div>
     <h2 class="section-title">Company leadership</h2>
-    <p class="leadership-intro">Our team brings together deep experience across healthcare services, technology, analytics, and operations — united by a shared belief that the healthcare system can do better.</p>
+    <p class="leadership-intro">Our team brings together deep experience across healthcare services, technology, analytics, and operations, united by a shared belief that the healthcare system can do better.</p>
     <div class="team-grid">
       <div class="team-card">
-        <img class="team-photo" src="https://cohealo.com/wp-content/uploads/2019/02/Todd-Rothenhaus.jpg" />
+        <img class="team-photo" src="images/todd-rothenhaus.jpg" />
         <div class="team-body">
           <div class="team-name">Todd Rothenhaus</div>
           <div class="team-title">Chief Executive Officer</div>
@@ -180,7 +63,7 @@
         </div>
       </div>
       <div class="team-card">
-        <img class="team-photo" src="https://cohealo.com/wp-content/uploads/2023/12/Karen-Headshot-e1703015845155.jpeg" />
+        <img class="team-photo" src="images/karen-mcgoff.jpg" />
         <div class="team-body">
           <div class="team-name">Karen McGoff</div>
           <div class="team-title">Chief Customer Officer</div>
@@ -188,7 +71,7 @@
         </div>
       </div>
       <div class="team-card">
-        <img class="team-photo" src="https://cohealo.com/wp-content/uploads/2019/02/Joe-Terranova.jpg" />
+        <img class="team-photo" src="images/joseph-terranova.jpg" />
         <div class="team-body">
           <div class="team-name">Joseph Terranova</div>
           <div class="team-title">Chief Technology Officer</div>
@@ -196,7 +79,7 @@
         </div>
       </div>
       <div class="team-card">
-        <img class="team-photo" src="https://cohealo.com/wp-content/uploads/2023/12/Hugh-Beyer-e1703016223540.jpg" />
+        <img class="team-photo" src="images/hugh-beyer.jpg" />
         <div class="team-body">
           <div class="team-name">Hugh Beyer</div>
           <div class="team-title">Vice President of Product</div>
@@ -211,12 +94,12 @@
   <div class="section-inner">
     <div class="eyebrow">What we stand for</div>
     <h2 class="section-title">Our values</h2>
-    <p class="section-sub" style="max-width:560px">These aren't words on a wall. They're the principles that guide every decision we make — from how we build our product to how we show up for our customers.</p>
+    <p class="section-sub">These aren't words on a wall. They're the principles that guide every decision we make, from how we build our product to how we show up for our customers.</p>
     <div class="values-grid">
       <div class="value-card">
         <div class="value-icon"><i data-lucide="shield-check"></i></div>
         <h3>Trust and be trustworthy</h3>
-        <p>We form strong relationships across our team and with our customers. We act with the utmost integrity and honesty — especially when it's hard.</p>
+        <p>We form strong relationships across our team and with our customers. We act with the utmost integrity and honesty, especially when it's hard.</p>
       </div>
       <div class="value-card">
         <div class="value-icon"><i data-lucide="flask-conical"></i></div>
@@ -226,22 +109,22 @@
       <div class="value-card">
         <div class="value-icon"><i data-lucide="heart-handshake"></i></div>
         <h3>Act with empathy</h3>
-        <p>We remember that we all have humanity in common. We create an open space to share and receive feedback — every voice contributes to our success.</p>
+        <p>We remember that we all have humanity in common. We create an open space to share and receive feedback; every voice contributes to our success.</p>
       </div>
       <div class="value-card">
         <div class="value-icon"><i data-lucide="search"></i></div>
         <h3>Relentlessly pursue the problem</h3>
-        <p>We doggedly investigate challenges, ask questions, listen to answers, and identify solutions — persistent and patient across a complex, high-stakes industry.</p>
+        <p>We doggedly investigate challenges, ask questions, listen to answers, and identify solutions, persistent and patient across a complex, high-stakes industry.</p>
       </div>
       <div class="value-card">
         <div class="value-icon"><i data-lucide="users"></i></div>
         <h3>Customers as partners</h3>
-        <p>We place customer needs at the center of everything. From front-line nurses and surgeons to finance and supply chain leaders — everyone should feel valued.</p>
+        <p>We place customer needs at the center of everything. From frontline nurses and surgeons to finance and supply chain leaders; everyone should feel valued.</p>
       </div>
       <div class="value-card">
         <div class="value-icon"><i data-lucide="sparkles"></i></div>
         <h3>No robots here</h3>
-        <p>We embrace the whole person at Cohealo. We focus on time well spent, not time on the clock — and we celebrate hard when we succeed.</p>
+        <p>We embrace the whole person at Cohealo. We focus on time well spent, not time on the clock, and we celebrate hard when we succeed.</p>
       </div>
     </div>
   </div>
@@ -250,28 +133,20 @@
 <div class="join">
   <h2>Come build the future of healthcare with us</h2>
   <p>We're a diverse team united by a shared mission. If you're passionate about making healthcare more affordable and accessible, we'd love to hear from you.</p>
-  <a class="join-btn" href="https://www.indeed.com/cmp/Cohealo" target="_blank">View open positions</a>
+  <a class="join-btn" href="https://www.indeed.com/cmp/Cohealo" target="_blank">View Open Positions</a>
 </div>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">
-      <a href="index.html">
-        <img src="https://cohealo.com/wp-content/uploads/2019/01/cohealo-logo.png" />
-      </a>
-    </div>
     <div class="footer-links">
       <a href="contact-us.html">Contact Us</a>
-      <a href="tel:8556926432">855-692-6432</a>
       <a href="privacy-terms.html">Terms &amp; Privacy</a>
-    </div>
-    <div class="footer-social">
-      <i data-lucide="linkedin"></i>
-      <i data-lucide="twitter"></i>
+      <span class="footer-copyright">Copyright &copy; <span id="footer-year"></span> Cohealo Inc. All rights reserved.</span>
     </div>
   </div>
 </footer>
 
-<script>lucide.createIcons();</script>
+<script>lucide.createIcons(); document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
