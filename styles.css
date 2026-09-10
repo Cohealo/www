@@ -155,7 +155,7 @@ body.pg-equipment-tracking {
   body.pg-contact-us .contact-panel { flex: 1; }
   body.pg-contact-us .contact-panel-customers { flex: 0 0 25%; max-width: 25%; display: flex; flex-direction: column; gap: 32px; }
   body.pg-contact-us .hq-card > a { display: block; margin-top: 16px; }
-  body.pg-contact-us .map-img { width: 100%; border-radius: 10px; border: 1px solid var(--border); display: block; margin-bottom: 16px; }
+  body.pg-contact-us .map-img { width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--border); display: block; margin-bottom: 16px; }
   body.pg-contact-us .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   body.pg-contact-us .form-group { margin-bottom: 18px; }
   body.pg-contact-us .form-group.full { grid-column: 1 / -1; }
