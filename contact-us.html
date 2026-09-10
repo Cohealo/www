@@ -228,9 +228,7 @@
         btn.disabled = false;
         spinner.classList.remove('show');
         label.textContent = 'Submit';
-        var detail = document.getElementById('partnershipErrorDetail');
-        detail.innerHTML = 'EmailJS error (' + (err.status || err.text || JSON.stringify(err)) +
-          '). Please try again or email <a href="mailto:info@cohealo.com">info@cohealo.com</a> directly.';
+        console.error('EmailJS', err);
         document.getElementById('partnershipErrorMsg').classList.add('show');
       });
   }
