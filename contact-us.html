@@ -3,77 +3,80 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Contact Us</title>
+<title>Contact Us · Cohealo</title>
+<meta name="description" content="Get in touch with Cohealo for a free ROI assessment, customer support, or general inquiries." />
 <link rel="shortcut icon" href="images/favicon-large.png" type="image/png" />
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Inter+Tight:wght@600;700&family=Inter:wght@600;700&display=swap" rel="stylesheet" />
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Inter+Tight:wght@600;700&family=Inter:wght@600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css">
 </head>
 <body class="pg-contact-us">
+<a class="skip-link" href="#main">Skip to content</a>
 
-<nav>
-  <div class="nav-left">
-    <div class="nav-logo">
-      <a href="index.html">
-        <img src="images/cohealo-logo.png" alt="Cohealo" />
-      </a>
-    </div>
-    <div class="nav-links">
-      <a href="index.html">Equipment Sharing</a>
-      <a href="equipment-tracking.html">Utilization Tracking</a>
-      <a href="capital-planning.html">Capital Planning</a>
-    </div>
-  </div>
-  <a href="company.html" class="nav-company">Company</a>
+<header class="site-header">
+<nav aria-label="Main">
+  <a class="nav-logo" href="index.html">
+    <img src="images/cohealo-logo.png" alt="Cohealo home" width="160" height="34" />
+  </a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  <ul id="site-nav" class="nav-links">
+    <li><a href="index.html">Equipment Sharing</a></li>
+    <li><a href="equipment-tracking.html">Utilization Tracking</a></li>
+    <li><a href="capital-planning.html">Capital Planning</a></li>
+    <li class="nav-right"><a href="company.html">Company</a></li>
+    <li class="nav-right"><a href="contact-us.html" aria-current="page">Contact</a></li>
+  </ul>
 </nav>
+</header>
+<main id="main">
 
-<div class="hero">
+<section class="hero">
   <div class="hero-tag">Get in touch</div>
   <h1>Connect with Cohealo</h1>
-</div>
+</section>
 
 <section>
   <div class="contact-wrap">
     <div class="info-card contact-panel">
-      <div class="info-icon"><i data-lucide="handshake"></i></div>
-      <h3>Considering a partnership with us?</h3>
+      <div class="info-icon"><i aria-hidden="true" data-lucide="handshake"></i></div>
+      <h2>Considering a partnership with us?</h2>
       <p>Learn more about our platform and services and get a free ROI assessment.</p>
-      <form id="partnershipForm" onsubmit="return false;">
+      <form id="partnershipForm" novalidate>
         <div class="form-row">
           <div class="form-group">
             <label for="p-first-name">First Name <span class="req">*</span></label>
-            <input type="text" id="p-first-name" name="first_name" />
-            <div class="field-error" id="err-p-first-name">Please enter your first name.</div>
+            <input type="text" id="p-first-name" name="first_name" autocomplete="given-name" aria-describedby="err-p-first-name" />
+            <div class="field-error" role="alert" id="err-p-first-name">Please enter your first name.</div>
           </div>
           <div class="form-group">
             <label for="p-last-name">Last Name <span class="req">*</span></label>
-            <input type="text" id="p-last-name" name="last_name" />
-            <div class="field-error" id="err-p-last-name">Please enter your last name.</div>
+            <input type="text" id="p-last-name" name="last_name" autocomplete="family-name" aria-describedby="err-p-last-name" />
+            <div class="field-error" role="alert" id="err-p-last-name">Please enter your last name.</div>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <label for="p-email">Work Email <span class="req">*</span></label>
-            <input type="email" id="p-email" name="email" />
-            <div class="field-error" id="err-p-email">Please enter a valid work email.</div>
+            <input type="email" id="p-email" name="email" autocomplete="email" aria-describedby="err-p-email" inputmode="email" />
+            <div class="field-error" role="alert" id="err-p-email">Please enter a valid work email.</div>
           </div>
           <div class="form-group">
             <label for="p-phone">Phone Number</label>
-            <input type="tel" id="p-phone" name="phone" />
+            <input type="tel" id="p-phone" name="phone" autocomplete="tel" inputmode="tel" />
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <label for="p-org">Health system/facility name <span class="req">*</span></label>
-            <input type="text" id="p-org" name="organization" />
-            <div class="field-error" id="err-p-org">Please enter your organization.</div>
+            <input type="text" id="p-org" name="organization" autocomplete="organization" aria-describedby="err-p-org" />
+            <div class="field-error" role="alert" id="err-p-org">Please enter your organization.</div>
           </div>
           <div class="form-group">
             <label for="p-role">Job Title</label>
-            <input type="text" id="p-role" name="job_title" />
+            <input type="text" id="p-role" name="job_title" autocomplete="organization-title" />
           </div>
         </div>
 
@@ -96,37 +99,37 @@
         <div class="form-row">
           <div class="form-group full">
             <label for="p-message">Message <span class="req">*</span></label>
-            <textarea id="p-message" name="message" placeholder="Tell us a bit about your organization and what you're looking for…"></textarea>
-            <div class="field-error" id="err-p-message">Please include a message.</div>
+            <textarea id="p-message" name="message" aria-describedby="err-p-message" placeholder="Tell us a bit about your organization and what you're looking for…"></textarea>
+            <div class="field-error" role="alert" id="err-p-message">Please include a message.</div>
           </div>
         </div>
 
         <p class="form-note"><span class="req">*</span> Required</p>
-        <button type="button" class="form-submit" id="partnershipSubmitBtn" onclick="submitPartnershipForm()">
+        <button type="submit" class="form-submit" id="partnershipSubmitBtn">
           <span class="spinner" id="partnershipSpinner"></span>
           <span id="partnershipBtnLabel">Submit</span>
         </button>
       </form>
 
-      <div class="alert alert-success" id="partnershipSuccessMsg">
-        <h4>Message sent</h4>
+      <div class="alert alert-success" role="status" id="partnershipSuccessMsg">
+        <h3>Message sent</h3>
         <p>Thanks for reaching out; someone from our team will follow up shortly.</p>
       </div>
 
-      <div class="alert alert-error" id="partnershipErrorMsg">
-        <h4>Delivery failed</h4>
+      <div class="alert alert-error" role="alert" id="partnershipErrorMsg">
+        <h3>Delivery failed</h3>
         <p id="partnershipErrorDetail">Something went wrong. Please try again or email us directly at <a href="mailto:info@cohealo.com">info@cohealo.com</a>.</p>
       </div>
     </div>
 
     <div class="contact-panel contact-panel-customers">
       <div class="info-card">
-        <h3>Customers</h3>
+        <h2>Customers</h2>
         <p>Call or text our support team at <a href="tel:8556926432">855-692-6432</a>.</p>
       </div>
 
       <div class="info-card hq-card">
-        <h3>Cohealo Headquarters</h3>
+        <h2>Cohealo Headquarters</h2>
         <a href="https://www.google.com/maps/search/?api=1&amp;query=15+Lincoln+Street+Suite+384+Wakefield+MA+01880" target="_blank" rel="noopener noreferrer">
           <img class="map-img" src="images/map-wakefield.jpg" alt="Map showing Cohealo headquarters at 15 Lincoln Street, Wakefield, Massachusetts (opens Google Maps in a new tab)" width="749" height="479" loading="lazy" />
         </a>
@@ -138,6 +141,8 @@
 </section>
 
 <!-- FOOTER -->
+</main>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-links">
@@ -148,6 +153,9 @@
   </div>
 </footer>
 
+<script src="https://unpkg.com/lucide@1.43.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="site.js"></script>
 <script>lucide.createIcons(); document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 
 <script>
@@ -160,10 +168,16 @@
 
   emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
+  document.getElementById('partnershipForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    submitPartnershipForm();
+  });
+
   // ── Partnership form: inline validation ────────────────────────
   ['p-first-name', 'p-last-name', 'p-email', 'p-org', 'p-message'].forEach(function (id) {
     document.getElementById(id).addEventListener('input', function () {
       this.classList.remove('error');
+      this.removeAttribute('aria-invalid');
       var err = document.getElementById('err-' + id);
       if (err) err.classList.remove('show');
     });
@@ -183,13 +197,19 @@
       var err = document.getElementById('err-' + r.id);
       if (!r.test(el.value)) {
         el.classList.add('error');
+        el.setAttribute('aria-invalid', 'true');
         if (err) err.classList.add('show');
         ok = false;
       } else {
         el.classList.remove('error');
+        el.removeAttribute('aria-invalid');
         if (err) err.classList.remove('show');
       }
     });
+    if (!ok) {
+      var first = document.querySelector('#partnershipForm .error');
+      if (first) first.focus();
+    }
     return ok;
   }
 

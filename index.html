@@ -3,30 +3,33 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Cohealo</title>
+<title>Equipment Sharing for Health Systems · Cohealo</title>
+<meta name="description" content="Cohealo helps health systems share the capital equipment they already own across facilities, cutting new purchases, rentals, and operating costs." />
 <link rel="shortcut icon" href="images/favicon-large.png" type="image/png" />
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Inter+Tight:wght@600;700&family=Inter:wght@600;700&display=swap" rel="stylesheet" />
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Inter+Tight:wght@600;700&family=Inter:wght@600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css">
 </head>
 <body class="pg-index">
+<a class="skip-link" href="#main">Skip to content</a>
 
-<nav>
-  <div class="nav-left">
-    <div class="nav-logo">
-      <a href="index.html">
-        <img src="images/cohealo-logo.png" alt="Cohealo" />
-      </a>
-    </div>
-    <div class="nav-links">
-      <a href="index.html">Equipment Sharing</a>
-      <a href="equipment-tracking.html">Utilization Tracking</a>
-      <a href="capital-planning.html">Capital Planning</a>
-    </div>
-  </div>
-  <a href="company.html" class="nav-company">Company</a>
+<header class="site-header">
+<nav aria-label="Main">
+  <a class="nav-logo" href="index.html">
+    <img src="images/cohealo-logo.png" alt="Cohealo home" width="160" height="34" />
+  </a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  <ul id="site-nav" class="nav-links">
+    <li><a href="index.html" aria-current="page">Equipment Sharing</a></li>
+    <li><a href="equipment-tracking.html">Utilization Tracking</a></li>
+    <li><a href="capital-planning.html">Capital Planning</a></li>
+    <li class="nav-right"><a href="company.html">Company</a></li>
+    <li class="nav-right"><a href="contact-us.html">Contact</a></li>
+  </ul>
 </nav>
+</header>
+<main id="main">
 
 <!-- HERO -->
 <section class="hero">
@@ -35,7 +38,7 @@
     <h1>Do more with the equipment<br><em>you already own</em></h1>
     <p>Health systems spend millions on capital equipment that sits idle. Cohealo's platform and logistics services turn that idle inventory into shared savings, eliminating new capital purchases, reducing rentals, and cutting operating costs.</p>
     <div class="hero-btns">
-      <a href="https://vimeo.com/321739702" target="_blank" class="btn-white">See How It Works</a>
+      <a href="https://vimeo.com/321739702" target="_blank" rel="noopener noreferrer" class="btn-white">See How It Works</a>
     </div>
   </div>
   <div class="hero-stats">
@@ -66,15 +69,15 @@
       <h2 class="section-title">Capital equipment is essential for delivering care, but costs are spiraling out of control.</h2>
       <div class="problem-items">
         <div class="problem-item">
-          <div class="problem-icon"><i data-lucide="dollar-sign"></i></div>
+          <div class="problem-icon"><i aria-hidden="true" data-lucide="dollar-sign"></i></div>
           <p>Equipment is typically purchased for peak demand at every site of service.</p>
         </div>
         <div class="problem-item">
-          <div class="problem-icon"><i data-lucide="trending-up"></i></div>
+          <div class="problem-icon"><i aria-hidden="true" data-lucide="trending-up"></i></div>
           <p>The equipment manufacturers are releasing new models faster than you can depreciate them.</p>
         </div>
         <div class="problem-item">
-          <div class="problem-icon"><i data-lucide="map-pin"></i></div>
+          <div class="problem-icon"><i aria-hidden="true" data-lucide="map-pin"></i></div>
           <p>Sites of service continue to grow, as care moves out of hospitals to ASCs and medical offices.</p>
         </div>
       </div>
@@ -126,19 +129,21 @@
     </div>
     <div class="platform-cards">
       <div class="platform-card">
-        <div class="platform-icon"><i data-lucide="activity"></i></div>
+        <div class="platform-icon"><i aria-hidden="true" data-lucide="activity"></i></div>
         <h3>Track Daily Utilization</h3>
         <p>Utilizing a lightweight feed from your IT system, Cohealo tracks equipment utilization across every facility, giving you a single view of what you own, where it is, and how often it's used.</p>
+        <a href="equipment-tracking.html">Learn about utilization tracking</a>
       </div>
       <div class="platform-card">
-        <div class="platform-icon"><i data-lucide="arrow-left-right"></i></div>
+        <div class="platform-icon"><i aria-hidden="true" data-lucide="arrow-left-right"></i></div>
         <h3>Reposition assets in real time</h3>
         <p>On-demand, specially trained logistics ensure safe, timely mobilization of shared equipment. Automated scheduling and conflict management remove burden from clinical staff.</p>
       </div>
       <div class="platform-card">
-        <div class="platform-icon"><i data-lucide="dollar-sign"></i></div>
+        <div class="platform-icon"><i aria-hidden="true" data-lucide="dollar-sign"></i></div>
         <h3>Inform Capital Planning</h3>
         <p>Cohealo customer success leaders leverage platform analytics to guide purchase reductions, eliminate rentals, and disrupt the replacement cycle, delivering a 3-5× return on your capital budget.</p>
+        <a href="capital-planning.html">Learn about capital planning</a>
       </div>
     </div>
   </div>
@@ -154,7 +159,7 @@
 
       <div class="solve-card">
         <div class="solve-icon">
-          <i data-lucide="clipboard-list"></i>
+          <i aria-hidden="true" data-lucide="clipboard-list"></i>
         </div>
         <div class="solve-label">Preparation</div>
         <ul>
@@ -166,7 +171,7 @@
 
       <div class="solve-card">
         <div class="solve-icon">
-          <i data-lucide="sliders-horizontal"></i>
+          <i aria-hidden="true" data-lucide="sliders-horizontal"></i>
         </div>
         <div class="solve-label">Optimization</div>
         <ul>
@@ -178,7 +183,7 @@
 
       <div class="solve-card">
         <div class="solve-icon">
-          <i data-lucide="message-square"></i>
+          <i aria-hidden="true" data-lucide="message-square"></i>
         </div>
         <div class="solve-label">Communication</div>
         <ul>
@@ -189,7 +194,7 @@
 
       <div class="solve-card">
         <div class="solve-icon">
-          <i data-lucide="truck"></i>
+          <i aria-hidden="true" data-lucide="truck"></i>
         </div>
         <div class="solve-label">Transportation</div>
         <ul>
@@ -201,7 +206,7 @@
 
       <div class="solve-card">
         <div class="solve-icon">
-          <i data-lucide="badge-check"></i>
+          <i aria-hidden="true" data-lucide="badge-check"></i>
         </div>
         <div class="solve-label">Confirmation</div>
         <ul>
@@ -219,7 +224,7 @@
 <section class="articles">
   <div class="section-inner">
     <div class="center-head">
-      <a href="https://www.advisory.com/daily-briefing/2019/01/28/kaiser-share" target="_blank" rel="noopener" class="advisory-btn">
+      <a href="https://www.advisory.com/daily-briefing/2019/01/28/kaiser-share" target="_blank" rel="noopener noreferrer" class="advisory-btn">
         Read Advisory Board's Take On What We Do
       </a>
     </div>
@@ -236,28 +241,28 @@
     </div>
     <div class="facility-chips">
       <span class="chip-wrap hospitals-wrap">
-        <span class="facility-chip hospitals">Hospitals<span class="chip-subtext">Text in the oval</span></span>
+        <span class="facility-chip hospitals">Hospitals</span>
       </span>
       <span class="chip-wrap ascs-wrap">
-        <span class="facility-chip ascs">ASCs<span class="chip-subtext">Text in the oval</span></span>
+        <span class="facility-chip ascs">ASCs</span>
       </span>
       <span class="chip-wrap medical-offices-wrap">
-        <span class="facility-chip medical-offices">Medical Offices<span class="chip-subtext">Text in the oval</span></span>
+        <span class="facility-chip medical-offices">Medical Offices</span>
       </span>
     </div>
     <div class="sl-chips">
-      <span class="sl-chip">Urology<span class="sl-tooltip"><ul><li>Aquablation System</li><li>Holmium Laser</li><li>Laser Lithotripsy System</li><li>Lithotriptor</li><li>Prostate Biopsy System</li><li>Thulium Laser</li></ul></span></span>
-      <span class="sl-chip">Head &amp; Neck<span class="sl-tooltip"><ul><li>Microdebrider</li><li>Nerve Monitoring System</li><li>Parathyroid Detection System</li><li>Surgical Drill System</li><li>Surgical Microscope</li><li>Surgical Navigation System</li></ul></span></span>
-      <span class="sl-chip">Orthopedics<span class="sl-tooltip"><ul><li>Distraction System</li><li>Jackson Table</li><li>Limb Positioner</li><li>Mini C-Arm</li><li>Surgical Navigation System</li><li>Tourniquet System</li></ul></span></span>
-      <span class="sl-chip">General Surgery<span class="sl-tooltip"><ul><li>Argon Beam Coagulator</li><li>Gamma Probe</li><li>Impedance Planimetry System</li><li>Intelligent Flow System</li><li>Nerve Monitoring System</li><li>Radar Localization System</li></ul></span></span>
-      <span class="sl-chip">Gynecology<span class="sl-tooltip"><ul><li>Bipolar Electrosurgery System</li><li>Colposcope</li><li>Endometrial Ablation System</li><li>Hydrothermal Ablation System</li><li>Intelligent Flow System</li><li>RF Ablation Console</li></ul></span></span>
-      <span class="sl-chip">Ophthalmology<span class="sl-tooltip"><ul><li>Cross Linking System</li><li>Cryosurgical System</li><li>Glaucoma Laser System</li><li>Ophthalmic Laser System</li><li>Phacoemulsification Unit</li><li>Vitreoretinal System</li></ul></span></span>
-      <span class="sl-chip">Vascular<span class="sl-tooltip"><ul><li>Convertible Ultrasound System</li><li>Imaging Table</li><li>IVUS Ultrasound System</li><li>Radiofrequency Generator</li><li>Ultrasound System</li></ul></span></span>
-      <span class="sl-chip">Neurosurgery<span class="sl-tooltip"><ul><li>BrainPath System</li><li>Jackson Table</li><li>Microdebrider</li><li>Nerve Monitoring System</li><li>Patient Positioning System</li><li>Surgical Navigation System</li></ul></span></span>
-      <span class="sl-chip">Plastics<span class="sl-tooltip"><ul><li>Aspirator/Liposuction System</li><li>Doppler Flow Detector</li><li>PAL Liposuction System</li><li>PAL LipoTower</li><li>Ultrasonic Aspirator System</li><li>Ultrasonic Surgical Aspiration System</li></ul></span></span>
-      <span class="sl-chip">Podiatry<span class="sl-tooltip"><ul><li>Coblation System</li><li>Mini C-Arm</li><li>Tourniquet System</li><li>Ultrasound System</li></ul></span></span>
-      <span class="sl-chip">Dermatology<span class="sl-tooltip"><ul><li>Pulsed-Dye Laser</li><li>Yag Laser</li></ul></span></span>
-      <span class="sl-chip">Dentistry<span class="sl-tooltip"><ul><li>Holmium Laser</li><li>Ultrasonic Aspirator System</li></ul></span></span>
+      <div class="sl-item"><button type="button" class="sl-chip" aria-expanded="false" aria-controls="sl-urology">Urology</button><div class="sl-tooltip" id="sl-urology"><ul><li>Aquablation System</li><li>Holmium Laser</li><li>Laser Lithotripsy System</li><li>Lithotriptor</li><li>Prostate Biopsy System</li><li>Thulium Laser</li></ul></div></div>
+      <div class="sl-item"><button type="button" class="sl-chip" aria-expanded="false" aria-controls="sl-head-and-neck">Head &amp; Neck</button><div class="sl-tooltip" id="sl-head-and-neck"><ul><li>Microdebrider</li><li>Nerve Monitoring System</li><li>Parathyroid Detection System</li><li>Surgical Drill System</li><li>Surgical Microscope</li><li>Surgical Navigation System</li></ul></div></div>
+      <div class="sl-item"><button type="button" class="sl-chip" aria-expanded="false" aria-controls="sl-orthopedics">Orthopedics</button><div class="sl-tooltip" id="sl-orthopedics"><ul><li>Distraction System</li><li>Jackson Table</li><li>Limb Positioner</li><li>Mini C-Arm</li><li>Surgical Navigation System</li><li>Tourniquet System</li></ul></div></div>
+      <div class="sl-item"><button type="button" class="sl-chip" aria-expanded="false" aria-controls="sl-general-surgery">General Surgery</button><div class="sl-tooltip" id="sl-general-surgery"><ul><li>Argon Beam Coagulator</li><li>Gamma Probe</li><li>Impedance Planimetry System</li><li>Intelligent Flow System</li><li>Nerve Monitoring System</li><li>Radar Localization System</li></ul></div></div>
+      <div class="sl-item"><button type="button" class="sl-chip" aria-expanded="false" aria-controls="sl-gynecology">Gynecology</button><div class="sl-tooltip" id="sl-gynecology"><ul><li>Bipolar Electrosurgery System</li><li>Colposcope</li><li>Endometrial Ablation System</li><li>Hydrothermal Ablation System</li><li>Intelligent Flow System</li><li>RF Ablation Console</li></ul></div></div>
+      <div class="sl-item"><button type="button" class="sl-chip" aria-expanded="false" aria-controls="sl-ophthalmology">Ophthalmology</button><div class="sl-tooltip" id="sl-ophthalmology"><ul><li>Cross Linking System</li><li>Cryosurgical System</li><li>Glaucoma Laser System</li><li>Ophthalmic Laser System</li><li>Phacoemulsification Unit</li><li>Vitreoretinal System</li></ul></div></div>
+      <div class="sl-item"><button type="button" class="sl-chip" aria-expanded="false" aria-controls="sl-vascular">Vascular</button><div class="sl-tooltip" id="sl-vascular"><ul><li>Convertible Ultrasound System</li><li>Imaging Table</li><li>IVUS Ultrasound System</li><li>Radiofrequency Generator</li><li>Ultrasound System</li></ul></div></div>
+      <div class="sl-item"><button type="button" class="sl-chip" aria-expanded="false" aria-controls="sl-neurosurgery">Neurosurgery</button><div class="sl-tooltip" id="sl-neurosurgery"><ul><li>BrainPath System</li><li>Jackson Table</li><li>Microdebrider</li><li>Nerve Monitoring System</li><li>Patient Positioning System</li><li>Surgical Navigation System</li></ul></div></div>
+      <div class="sl-item"><button type="button" class="sl-chip" aria-expanded="false" aria-controls="sl-plastics">Plastics</button><div class="sl-tooltip" id="sl-plastics"><ul><li>Aspirator/Liposuction System</li><li>Doppler Flow Detector</li><li>PAL Liposuction System</li><li>PAL LipoTower</li><li>Ultrasonic Aspirator System</li><li>Ultrasonic Surgical Aspiration System</li></ul></div></div>
+      <div class="sl-item"><button type="button" class="sl-chip" aria-expanded="false" aria-controls="sl-podiatry">Podiatry</button><div class="sl-tooltip" id="sl-podiatry"><ul><li>Coblation System</li><li>Mini C-Arm</li><li>Tourniquet System</li><li>Ultrasound System</li></ul></div></div>
+      <div class="sl-item"><button type="button" class="sl-chip" aria-expanded="false" aria-controls="sl-dermatology">Dermatology</button><div class="sl-tooltip" id="sl-dermatology"><ul><li>Pulsed-Dye Laser</li><li>Yag Laser</li></ul></div></div>
+      <div class="sl-item"><button type="button" class="sl-chip" aria-expanded="false" aria-controls="sl-dentistry">Dentistry</button><div class="sl-tooltip" id="sl-dentistry"><ul><li>Holmium Laser</li><li>Ultrasonic Aspirator System</li></ul></div></div>
       
 
     </div>
@@ -330,35 +335,39 @@
 <section class="cta-band">
   <h2>Find out how much sharing could save your health system.</h2>
   <p>We'll reach out to answer any questions, and kick off a free ROI evaluation.</p>
-  <form id="ctaForm" onsubmit="return false;">
+  <form id="ctaForm" novalidate>
     <div class="cta-form">
       <div class="cta-field">
-        <input type="text" id="cta-name" name="name" placeholder="Your name" />
-        <div class="field-error" id="err-cta-name">Please enter your name.</div>
+        <label class="visually-hidden" for="cta-name">Your name</label>
+        <input type="text" id="cta-name" name="name" placeholder="Your name" autocomplete="name" aria-describedby="err-cta-name" />
+        <div class="field-error" role="alert" id="err-cta-name">Please enter your name.</div>
       </div>
       <div class="cta-field">
-        <input type="email" id="cta-email" name="email" placeholder="Your work email" />
-        <div class="field-error" id="err-cta-email">Please enter a valid work email.</div>
+        <label class="visually-hidden" for="cta-email">Your work email</label>
+        <input type="email" id="cta-email" name="email" placeholder="Your work email" autocomplete="email" inputmode="email" aria-describedby="err-cta-email" />
+        <div class="field-error" role="alert" id="err-cta-email">Please enter a valid work email.</div>
       </div>
-      <button type="button" id="ctaSubmitBtn" onclick="submitCtaForm()">
+      <button type="submit" id="ctaSubmitBtn">
         <span class="spinner" id="ctaSpinner"></span>
         <span id="ctaBtnLabel">Submit</span>
       </button>
     </div>
   </form>
 
-  <div class="alert alert-success" id="ctaSuccessMsg">
-    <h4>Message sent</h4>
+  <div class="alert alert-success" role="status" id="ctaSuccessMsg">
+    <h3>Message sent</h3>
     <p>Thanks for reaching out; someone from our team will follow up shortly.</p>
   </div>
 
-  <div class="alert alert-error" id="ctaErrorMsg">
-    <h4>Delivery failed</h4>
+  <div class="alert alert-error" role="alert" id="ctaErrorMsg">
+    <h3>Delivery failed</h3>
     <p id="ctaErrorDetail">Something went wrong. Please try again or email us directly at <a href="mailto:info@cohealo.com">info@cohealo.com</a>.</p>
   </div>
 </section>
 
 <!-- FOOTER -->
+</main>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-links">
@@ -369,6 +378,9 @@
   </div>
 </footer>
 
+<script src="https://unpkg.com/lucide@1.43.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="site.js"></script>
 <script>
 lucide.createIcons();
 document.getElementById('footer-year').textContent = new Date().getFullYear();
@@ -382,10 +394,16 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
 
   emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
+  document.getElementById('ctaForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    submitCtaForm();
+  });
+
   // ── CTA form: inline validation ─────────────────────────────────
   ['cta-name', 'cta-email'].forEach(function (id) {
     document.getElementById(id).addEventListener('input', function () {
       this.classList.remove('error');
+      this.removeAttribute('aria-invalid');
       var err = document.getElementById('err-' + id);
       if (err) err.classList.remove('show');
     });
@@ -402,13 +420,19 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
       var err = document.getElementById('err-' + r.id);
       if (!r.test(el.value)) {
         el.classList.add('error');
+        el.setAttribute('aria-invalid', 'true');
         if (err) err.classList.add('show');
         ok = false;
       } else {
         el.classList.remove('error');
+        el.removeAttribute('aria-invalid');
         if (err) err.classList.remove('show');
       }
     });
+    if (!ok) {
+      var first = document.querySelector('#ctaForm .error');
+      if (first) first.focus();
+    }
     return ok;
   }
 

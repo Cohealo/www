@@ -3,52 +3,56 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Capital Planning</title>
+<title>Capital Planning · Cohealo</title>
+<meta name="description" content="Data-driven capital planning: Cohealo weighs each equipment request against current utilization and sharing opportunities across your health system." />
 <link rel="shortcut icon" href="images/favicon-large.png" type="image/png" />
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Inter+Tight:wght@600;700&family=Inter:wght@600;700&display=swap" rel="stylesheet" />
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Inter+Tight:wght@600;700&family=Inter:wght@600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css">
 </head>
 <body class="pg-capital-planning">
+<a class="skip-link" href="#main">Skip to content</a>
 
-<nav>
-  <div class="nav-left">
-    <div class="nav-logo">
-      <a href="index.html">
-        <img src="images/cohealo-logo.png" alt="Cohealo" />
-      </a>
-    </div>
-    <div class="nav-links">
-      <a href="index.html">Equipment Sharing</a>
-      <a href="equipment-tracking.html">Utilization Tracking</a>
-      <a href="capital-planning.html">Capital Planning</a>
-    </div>
-  </div>
-  <a href="company.html" class="nav-company">Company</a>
+<header class="site-header">
+<nav aria-label="Main">
+  <a class="nav-logo" href="index.html">
+    <img src="images/cohealo-logo.png" alt="Cohealo home" width="160" height="34" />
+  </a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  <ul id="site-nav" class="nav-links">
+    <li><a href="index.html">Equipment Sharing</a></li>
+    <li><a href="equipment-tracking.html">Utilization Tracking</a></li>
+    <li><a href="capital-planning.html" aria-current="page">Capital Planning</a></li>
+    <li class="nav-right"><a href="company.html">Company</a></li>
+    <li class="nav-right"><a href="contact-us.html">Contact</a></li>
+  </ul>
 </nav>
+</header>
+<main id="main">
 
-<div class="hero">
+<section class="hero">
   <div class="hero-tag">Solutions · Capital Planning</div>
   <h1>Data-driven capital planning</h1>
   <p>Cohealo evaluates your capital requests, weighing each potential purchase in the context of current equipment utilization and the potential to source existing equipment from sister facilities.</p>
-</div>
+</section>
 
 <section class="cap-features">
   <div class="section-inner">
     <div class="value-grid">
       <div class="value-card">
-        <div class="value-icon"><i data-lucide="bar-chart-3"></i></div>
-        <h3>Purchase equipment based on usage</h3>
+        <div class="value-icon"><i aria-hidden="true" data-lucide="bar-chart-3"></i></div>
+        <h2>Purchase equipment based on usage</h2>
         <p>Health systems are under more pressure than ever before to find savings, and capital equipment is one of the fastest growing expenses. Cohealo improves the transparency around capital planning by providing objective data on current equipment utilization, so executives can prioritize what to buy and when to buy it.</p>
       </div>
       <div class="value-card">
-        <div class="value-icon"><i data-lucide="users"></i></div>
-        <h3>Not just data dashboards. Real human analysis.</h3>
+        <div class="value-icon"><i aria-hidden="true" data-lucide="users"></i></div>
+        <h2>Not just data dashboards. Real human analysis.</h2>
         <p>Every health system is different. That's why Cohealo's customer success team works directly with OR directors and finance staff to meet the system's unique capital and operational expense reduction goals, combining our technology with real human judgment.</p>
       </div>
       <div class="value-card">
-        <div class="value-icon"><i data-lucide="layers"></i></div>
-        <h3>Identify duplicate requests, and then share</h3>
+        <div class="value-icon"><i aria-hidden="true" data-lucide="layers"></i></div>
+        <h2>Identify duplicate requests, and then share</h2>
         <p>During the capital planning process, instead of buying a single resource for each facility, Cohealo identifies equipment that can be purchased for multiple providers across the health system, so finance moves further down its list of requests, and providers get access to a greater variety of equipment.</p>
       </div>
     </div>
@@ -73,22 +77,22 @@
     <div class="process-grid">
       <div class="process-step">
         <div class="process-num">Step 1</div>
-        <h4>Surface idle capacity</h4>
+        <h3>Surface idle capacity</h3>
         <p>Tracking data across the network flags equipment that's sitting underused, giving every capital review a starting point grounded in what's already on hand.</p>
       </div>
       <div class="process-step">
         <div class="process-num">Step 2</div>
-        <h4>Run an opportunity assessment</h4>
+        <h3>Run an opportunity assessment</h3>
         <p>Each request gets weighed against that idle capacity to see whether it can be met without a purchase at all.</p>
       </div>
       <div class="process-step">
         <div class="process-num">Step 3</div>
-        <h4>Map sharing across facilities</h4>
+        <h3>Map sharing across facilities</h3>
         <p>When a purchase is still the right call, Cohealo lines up other sites that could use the same unit, so it's shared from day one instead of sitting idle at a single facility.</p>
       </div>
       <div class="process-step">
         <div class="process-num">Step 4</div>
-        <h4>Score and prioritize</h4>
+        <h3>Score and prioritize</h3>
         <p>Requests are ranked by projected savings and broader financial impact, so finance and value analysis know which purchases to green-light first.</p>
       </div>
     </div>
@@ -96,6 +100,8 @@
 </section>
 
 <!-- FOOTER -->
+</main>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-links">
@@ -106,6 +112,8 @@
   </div>
 </footer>
 
+<script src="https://unpkg.com/lucide@1.43.0/dist/umd/lucide.min.js"></script>
+<script src="site.js"></script>
 <script>lucide.createIcons(); document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

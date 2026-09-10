@@ -3,41 +3,45 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Privacy & Terms</title>
+<title>Privacy Policy &amp; Terms of Use · Cohealo</title>
+<meta name="description" content="How Cohealo collects and uses information through this website, and the terms that govern your use of it." />
 <link rel="shortcut icon" href="images/favicon-large.png" type="image/png" />
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Inter+Tight:wght@600;700&family=Inter:wght@600;700&display=swap" rel="stylesheet" />
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Inter+Tight:wght@600;700&family=Inter:wght@600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css">
 </head>
 <body class="pg-privacy-terms">
+<a class="skip-link" href="#main">Skip to content</a>
 
-<nav>
-  <div class="nav-left">
-    <div class="nav-logo">
-      <a href="index.html">
-        <img src="images/cohealo-logo.png" alt="Cohealo" />
-      </a>
-    </div>
-    <div class="nav-links">
-      <a href="index.html">Equipment Sharing</a>
-      <a href="equipment-tracking.html">Utilization Tracking</a>
-      <a href="capital-planning.html">Capital Planning</a>
-    </div>
-  </div>
-  <a href="company.html" class="nav-company">Company</a>
+<header class="site-header">
+<nav aria-label="Main">
+  <a class="nav-logo" href="index.html">
+    <img src="images/cohealo-logo.png" alt="Cohealo home" width="160" height="34" />
+  </a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  <ul id="site-nav" class="nav-links">
+    <li><a href="index.html">Equipment Sharing</a></li>
+    <li><a href="equipment-tracking.html">Utilization Tracking</a></li>
+    <li><a href="capital-planning.html">Capital Planning</a></li>
+    <li class="nav-right"><a href="company.html">Company</a></li>
+    <li class="nav-right"><a href="contact-us.html">Contact</a></li>
+  </ul>
 </nav>
+</header>
+<main id="main">
 
-<div class="hero">
+<section class="hero">
   <div class="hero-tag">Legal</div>
   <h1>Privacy Policy &amp; Terms of Use</h1>
   <p>How Cohealo collects and uses information through this website, and the terms that govern your use of it.</p>
   <div class="updated">Last updated: July 2026</div>
-</div>
+</section>
 
 <div class="legal-wrap">
 
   <div class="legal-note">
-    <h4>Plain-language summary</h4>
+    <h2>Plain-language summary</h2>
     <p>We collect the information you give us (like your name and business email) to respond to you, and basic technical data to keep this site running. We do not sell your information, we do not use it to build advertising profiles, and we do not track you across other websites. Full details below.</p>
   </div>
 
@@ -194,6 +198,8 @@
 </div>
 
 <!-- FOOTER -->
+</main>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-links">
@@ -204,6 +210,8 @@
   </div>
 </footer>
 
+<script src="https://unpkg.com/lucide@1.43.0/dist/umd/lucide.min.js"></script>
+<script src="site.js"></script>
 <script>lucide.createIcons(); document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
