@@ -25,7 +25,6 @@
     <li><a href="equipment-tracking.html" aria-current="page">Utilization Tracking</a></li>
     <li><a href="capital-planning.html">Capital Planning</a></li>
     <li class="nav-right"><a href="company.html">Company</a></li>
-    <li class="nav-right"><a href="contact-us.html">Contact</a></li>
   </ul>
 </nav>
 </header>
@@ -128,33 +127,35 @@
 <section class="cta-band">
   <h2>Let us tell you more.</h2>
   <p>We'll email you to start the conversation.</p>
-  <form id="ctaForm" novalidate>
-    <div class="cta-form">
-      <div class="cta-field">
-        <label class="visually-hidden" for="cta-name">Your name</label>
-        <input type="text" id="cta-name" name="name" placeholder="Your name" autocomplete="name" aria-describedby="err-cta-name" />
-        <div class="field-error" role="alert" id="err-cta-name">Please enter your name.</div>
+  <div class="cta-wrap">
+    <form id="ctaForm" novalidate>
+      <div class="cta-form">
+        <div class="cta-field">
+          <label class="visually-hidden" for="cta-name">Your name</label>
+          <input type="text" id="cta-name" name="name" placeholder="Your name" autocomplete="name" aria-describedby="err-cta-name" />
+          <div class="field-error" role="alert" id="err-cta-name">Please enter your name.</div>
+        </div>
+        <div class="cta-field">
+          <label class="visually-hidden" for="cta-email">Your work email</label>
+          <input type="email" id="cta-email" name="email" placeholder="Your work email" autocomplete="email" inputmode="email" aria-describedby="err-cta-email" />
+          <div class="field-error" role="alert" id="err-cta-email">Please enter a valid work email.</div>
+        </div>
+        <button type="submit" id="ctaSubmitBtn">
+          <span class="spinner" id="ctaSpinner"></span>
+          <span id="ctaBtnLabel">Submit</span>
+        </button>
       </div>
-      <div class="cta-field">
-        <label class="visually-hidden" for="cta-email">Your work email</label>
-        <input type="email" id="cta-email" name="email" placeholder="Your work email" autocomplete="email" inputmode="email" aria-describedby="err-cta-email" />
-        <div class="field-error" role="alert" id="err-cta-email">Please enter a valid work email.</div>
-      </div>
-      <button type="submit" id="ctaSubmitBtn">
-        <span class="spinner" id="ctaSpinner"></span>
-        <span id="ctaBtnLabel">Submit</span>
-      </button>
+    </form>
+
+    <div class="alert alert-success" role="status" id="ctaSuccessMsg">
+      <h3>Message sent</h3>
+      <p>Thank you! A member of our team will follow up shortly.</p>
     </div>
-  </form>
 
-  <div class="alert alert-success" role="status" id="ctaSuccessMsg">
-    <h3>Message sent</h3>
-    <p>Thanks for reaching out; someone from our team will follow up shortly.</p>
-  </div>
-
-  <div class="alert alert-error" role="alert" id="ctaErrorMsg">
-    <h3>Delivery failed</h3>
-    <p id="ctaErrorDetail">Something went wrong. Please try again or email us directly at <a href="mailto:info@cohealo.com">info@cohealo.com</a>.</p>
+    <div class="alert alert-error" role="alert" id="ctaErrorMsg">
+      <h3>Delivery failed</h3>
+      <p id="ctaErrorDetail">Please try again or email us at <a href="mailto:info@cohealo.com">info@cohealo.com</a>.</p>
+    </div>
   </div>
 </section>
 

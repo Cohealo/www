@@ -16,24 +16,29 @@
     });
   }
 
+  // Hover-capable devices (desktop) reveal the tooltip on :hover alone (see CSS);
+  // click-to-toggle is only wired up where hover isn't available (touch), since
+  // a click's persistent open state would otherwise linger independently of
+  // whatever the user is currently hovering.
+  var supportsHover = window.matchMedia('(hover: hover)').matches;
   var items = document.querySelectorAll('.sl-item');
-  var closeAll = function (except) {
+  if (!supportsHover && items.length) {
+    var closeAll = function (except) {
+      items.forEach(function (it) {
+        if (it === except) return;
+        it.classList.remove('is-open');
+        it.querySelector('.sl-chip').setAttribute('aria-expanded', 'false');
+      });
+    };
     items.forEach(function (it) {
-      if (it === except) return;
-      it.classList.remove('is-open');
-      it.querySelector('.sl-chip').setAttribute('aria-expanded', 'false');
+      var btn = it.querySelector('.sl-chip');
+      btn.addEventListener('click', function () {
+        var open = !it.classList.contains('is-open');
+        closeAll(it);
+        it.classList.toggle('is-open', open);
+        btn.setAttribute('aria-expanded', String(open));
+      });
     });
-  };
-  items.forEach(function (it) {
-    var btn = it.querySelector('.sl-chip');
-    btn.addEventListener('click', function () {
-      var open = !it.classList.contains('is-open');
-      closeAll(it);
-      it.classList.toggle('is-open', open);
-      btn.setAttribute('aria-expanded', String(open));
-    });
-  });
-  if (items.length) {
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAll(); });
     document.addEventListener('click', function (e) { if (!e.target.closest('.sl-item')) closeAll(); });
   }
