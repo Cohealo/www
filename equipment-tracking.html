@@ -3,39 +3,41 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Equipment Tracking</title>
+<title>Equipment Tracking · Cohealo</title>
+<meta name="description" content="Track capital equipment utilization across every facility and service line to validate or refute the case for new purchases." />
 <link rel="shortcut icon" href="images/favicon-large.png" type="image/png" />
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Inter+Tight:wght@600;700&family=Inter:wght@600;700&display=swap" rel="stylesheet" />
-<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Inter+Tight:wght@600;700&family=Inter:wght@600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css">
 </head>
 <body class="pg-equipment-tracking">
+<a class="skip-link" href="#main">Skip to content</a>
 
-<nav>
-  <div class="nav-left">
-    <div class="nav-logo">
-      <a href="index.html">
-        <img src="images/cohealo-logo.png" alt="Cohealo" />
-      </a>
-    </div>
-    <div class="nav-links">
-      <a href="index.html">Equipment Sharing</a>
-      <a href="equipment-tracking.html">Utilization Tracking</a>
-      <a href="capital-planning.html">Capital Planning</a>
-    </div>
-  </div>
-  <a href="company.html" class="nav-company">Company</a>
+<header class="site-header">
+<nav aria-label="Main">
+  <a class="nav-logo" href="index.html">
+    <img src="images/cohealo-logo.png" alt="Cohealo home" width="160" height="34" />
+  </a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  <ul id="site-nav" class="nav-links">
+    <li><a href="index.html">Equipment Sharing</a></li>
+    <li><a href="equipment-tracking.html" aria-current="page">Utilization Tracking</a></li>
+    <li><a href="capital-planning.html">Capital Planning</a></li>
+    <li class="nav-right"><a href="company.html">Company</a></li>
+  </ul>
 </nav>
+</header>
+<main id="main">
 
 <!-- HERO -->
-<div class="hero">
+<section class="hero">
   <div class="hero-inner">
     <div class="hero-tag">Equipment tracking</div>
     <h1>Take control of your most<br><em>critical capital assets</em></h1>
     <p>Tracking equipment utilization across facilities and service lines unlocks insights to avoid new capital purchases, reduce equipment rentals, identify opportunities to relocate assets between facilities, and identify opportunities to off-board underused assets.</p>
   </div>
-</div>
+</section>
 
 <!-- LARGE STATEMENT -->
 <section class="validate">
@@ -52,23 +54,23 @@
     <p class="section-sub center">No manual data entry. No dedicated time from clinical staff. Cohealo combines what your systems already know with what only your people do.</p>
     <div class="how-steps">
       <div class="how-step">
-        <div class="how-num"><span class="how-num-icon"><i data-lucide="database"></i></span>Case data import</div>
-        <h4>Your procedural schedule</h4>
+        <div class="how-num"><span class="how-num-icon"><i aria-hidden="true" data-lucide="database"></i></span>Case data import</div>
+        <h3>Your procedural schedule</h3>
         <p>A lightweight, twice-daily export from your scheduling system, procedure, physician, date, time, and location. No PHI or PII required.</p>
       </div>
       <div class="how-step">
-        <div class="how-num"><span class="how-num-icon"><i data-lucide="stethoscope"></i></span>Equipment inventory</div>
-        <h4>What you actually own</h4>
+        <div class="how-num"><span class="how-num-icon"><i aria-hidden="true" data-lucide="stethoscope"></i></span>Equipment inventory</div>
+        <h3>What you actually own</h3>
         <p>Capital equipment counts by make and model, validated against your asset register and the realities your clinical staff see on the ground.</p>
       </div>
       <div class="how-step">
-        <div class="how-num"><span class="how-num-icon"><i data-lucide="notebook-pen"></i></span>Physician preferences</div>
-        <h4>What each case requires</h4>
+        <div class="how-num"><span class="how-num-icon"><i aria-hidden="true" data-lucide="notebook-pen"></i></span>Physician preferences</div>
+        <h3>What each case requires</h3>
         <p>Business logic mapping procedures to the equipment they require, specific to each facility, service line, and individual physician.</p>
       </div>
       <div class="how-step">
-        <div class="how-num"><span class="how-num-icon"><i data-lucide="lightbulb"></i></span>Local knowledge</div>
-        <h4>What only your team knows</h4>
+        <div class="how-num"><span class="how-num-icon"><i aria-hidden="true" data-lucide="lightbulb"></i></span>Local knowledge</div>
+        <h3>What only your team knows</h3>
         <p>Departmental review to verify accuracy and surface the idiosyncrasies no data feed alone would catch.</p>
       </div>
     </div>
@@ -84,22 +86,22 @@
     <div class="stake-grid">
       <div class="stake-card">
         <div class="stake-label">Finance</div>
-        <h4>Justify every six-figure purchase</h4>
+        <h3>Justify every six-figure purchase</h3>
         <p>Check whether existing equipment already has the idle capacity to cover demand before signing off on another $250,000 ultrasound or $500,000 procedural device.</p>
       </div>
       <div class="stake-card">
         <div class="stake-label">Supply Chain</div>
-        <h4>Size the fleet with evidence, not habit</h4>
+        <h3>Size the fleet with evidence, not habit</h3>
         <p>Idle-time and peak-demand analysis show when relocating equipment beats buying more, and when a scheduling tweak fixes a pinch point outright.</p>
       </div>
       <div class="stake-card">
         <div class="stake-label">Value Analysis</div>
-        <h4>Prioritize competing capital requests</h4>
+        <h3>Prioritize competing capital requests</h3>
         <p>Compare a request against documented usage, existing capacity, and rental history to see what's truly necessary and what should be replaced first.</p>
       </div>
       <div class="stake-card">
         <div class="stake-label">HTM</div>
-        <h4>Shrink the inspection and PM burden</h4>
+        <h3>Shrink the inspection and PM burden</h3>
         <p>A smaller, better-managed fleet means fewer devices to service, lower parts and contract spend, and more technician time for what matters clinically.</p>
       </div>
     </div>
@@ -107,7 +109,7 @@
 </section>
 
 <!-- whitepaper -->
-<div class="wp-section">
+<section class="wp-section">
   <div class="wp-inner">
     <div class="wp-text">
       <h3>Utilization tracking is step one</h3>
@@ -116,44 +118,50 @@
     <div class="wp-text">
       <h3>The rest of the roadmap</h3>
       <p>Our whitepaper walks through how finance, supply chain, value analysis, and HTM teams each put utilization data to work, and why organizations that act on it, relocating and cross-scheduling equipment instead of just monitoring it, tend to see meaningfully greater savings than tracking and analysis deliver on their own.</p>
-      <a href="resources/medical-equipment-blind-spot-cohealo.pdf" class="wp-btn" target="_blank" rel="noopener">Download The Whitepaper</a>
+      <a href="resources/medical-equipment-blind-spot-cohealo.pdf" class="wp-btn" target="_blank" rel="noopener noreferrer">Download The Whitepaper</a>
     </div>
   </div>
-</div>
+</section>
 
 <!-- CTA -->
-<div class="cta-band">
+<section class="cta-band">
   <h2>Let us tell you more.</h2>
   <p>We'll email you to start the conversation.</p>
-  <form id="ctaForm" onsubmit="return false;">
-    <div class="cta-form">
-      <div class="cta-field">
-        <input type="text" id="cta-name" name="name" placeholder="Your name" />
-        <div class="field-error" id="err-cta-name">Please enter your name.</div>
+  <div class="cta-wrap">
+    <form id="ctaForm" novalidate>
+      <div class="cta-form">
+        <div class="cta-field">
+          <label class="visually-hidden" for="cta-name">Your name</label>
+          <input type="text" id="cta-name" name="name" placeholder="Your name" autocomplete="name" aria-describedby="err-cta-name" />
+          <div class="field-error" role="alert" id="err-cta-name">Please enter your name.</div>
+        </div>
+        <div class="cta-field">
+          <label class="visually-hidden" for="cta-email">Your work email</label>
+          <input type="email" id="cta-email" name="email" placeholder="Your work email" autocomplete="email" inputmode="email" aria-describedby="err-cta-email" />
+          <div class="field-error" role="alert" id="err-cta-email">Please enter a valid work email.</div>
+        </div>
+        <button type="submit" id="ctaSubmitBtn">
+          <span class="spinner" id="ctaSpinner"></span>
+          <span id="ctaBtnLabel">Submit</span>
+        </button>
       </div>
-      <div class="cta-field">
-        <input type="email" id="cta-email" name="email" placeholder="Your work email" />
-        <div class="field-error" id="err-cta-email">Please enter a valid work email.</div>
-      </div>
-      <button type="button" id="ctaSubmitBtn" onclick="submitCtaForm()">
-        <span class="spinner" id="ctaSpinner"></span>
-        <span id="ctaBtnLabel">Submit</span>
-      </button>
+    </form>
+
+    <div class="alert alert-success" role="status" id="ctaSuccessMsg">
+      <h3>Message sent</h3>
+      <p>Thank you! A member of our team will follow up shortly.</p>
     </div>
-  </form>
 
-  <div class="alert alert-success" id="ctaSuccessMsg">
-    <h4>Message sent</h4>
-    <p>Thanks for reaching out; someone from our team will follow up shortly.</p>
+    <div class="alert alert-error" role="alert" id="ctaErrorMsg">
+      <h3>Delivery failed</h3>
+      <p id="ctaErrorDetail">Please try again or email us at <a href="mailto:info@cohealo.com">info@cohealo.com</a>.</p>
+    </div>
   </div>
-
-  <div class="alert alert-error" id="ctaErrorMsg">
-    <h4>Delivery failed</h4>
-    <p id="ctaErrorDetail">Something went wrong. Please try again or email us directly at <a href="mailto:info@cohealo.com">info@cohealo.com</a>.</p>
-  </div>
-</div>
+</section>
 
 <!-- FOOTER -->
+</main>
+
 <footer>
   <div class="footer-inner">
     <div class="footer-links">
@@ -164,6 +172,9 @@
   </div>
 </footer>
 
+<script src="https://unpkg.com/lucide@1.43.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="site.js"></script>
 <script>lucide.createIcons(); document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
 
 <script>
@@ -174,10 +185,16 @@
 
   emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
+  document.getElementById('ctaForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    submitCtaForm();
+  });
+
   // ── CTA form: inline validation ─────────────────────────────────
   ['cta-name', 'cta-email'].forEach(function (id) {
     document.getElementById(id).addEventListener('input', function () {
       this.classList.remove('error');
+      this.removeAttribute('aria-invalid');
       var err = document.getElementById('err-' + id);
       if (err) err.classList.remove('show');
     });
@@ -194,13 +211,19 @@
       var err = document.getElementById('err-' + r.id);
       if (!r.test(el.value)) {
         el.classList.add('error');
+        el.setAttribute('aria-invalid', 'true');
         if (err) err.classList.add('show');
         ok = false;
       } else {
         el.classList.remove('error');
+        el.removeAttribute('aria-invalid');
         if (err) err.classList.remove('show');
       }
     });
+    if (!ok) {
+      var first = document.querySelector('#ctaForm .error');
+      if (first) first.focus();
+    }
     return ok;
   }
 
@@ -234,9 +257,7 @@
         btn.disabled = false;
         spinner.classList.remove('show');
         label.textContent = 'Submit';
-        var detail = document.getElementById('ctaErrorDetail');
-        detail.innerHTML = 'EmailJS error (' + (err.status || err.text || JSON.stringify(err)) +
-          '). Please try again or email <a href="mailto:info@cohealo.com">info@cohealo.com</a> directly.';
+        console.error('EmailJS', err);
         document.getElementById('ctaErrorMsg').classList.add('show');
       });
   }
