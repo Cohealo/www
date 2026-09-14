@@ -33,9 +33,12 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <div class="eyebrow">Equipment sharing for health systems</div>
     <h1>Do more with the equipment<br><em>you already own</em></h1>
     <p>Health systems spend millions on capital equipment that sits idle. Cohealo's platform and logistics services turn that idle inventory into shared savings, eliminating new capital purchases, reducing rentals, and cutting operating costs.</p>
+    <div class="hero-actions">
+      <button type="button" class="hero-cta" id="watchOverviewBtn" aria-expanded="false" aria-controls="heroVideoTile">Watch a quick overview</button>
+      <a href="https://www.advisory.com/daily-briefing/2019/01/28/kaiser-share" target="_blank" rel="noopener noreferrer" class="hero-link">Read the Advisory Board on Our Savings</a>
+    </div>
   </div>
   <div class="hero-stats">
     <div class="stat-card">
@@ -54,8 +57,8 @@
       <div class="stat-num">99.98%</div>
       <div class="stat-label">Logistics accuracy across 7,000+ moves</div>
     </div>
-    <div class="hero-video">
-      <iframe src="https://player.vimeo.com/video/321739702?dnt=1&title=0&byline=0&portrait=0" title="See how Cohealo works" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    <div class="hero-video" id="heroVideoTile">
+      <iframe id="heroVideoFrame" src="https://player.vimeo.com/video/321739702?dnt=1&title=0&byline=0&portrait=0" title="See how Cohealo works" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
 </section>
@@ -64,7 +67,6 @@
 <section class="problem">
   <div class="problem-inner">
     <div class="problem-text">
-      <div class="section-eyebrow">The problem</div>
       <h2 class="section-title">Capital equipment is essential for delivering care, but costs are spiraling out of control.</h2>
       <div class="problem-items">
         <div class="problem-item">
@@ -86,15 +88,15 @@
         <div class="eq-img-wrap"><img src="images/eq-video-tower.jpg" alt="Video tower" width="320" height="220" loading="lazy" /></div>
         <div class="eq-overlay">
           <div class="eq-name">Video Tower</div>
-          <div class="eq-cost">$395,000</div>
+          <div class="eq-cost">$170,000</div>
           <div class="eq-cases">187 cases/year</div>
         </div>
       </div>
       <div class="eq-card">
         <div class="eq-img-wrap"><img src="images/eq-orthopedic-table.jpg" alt="Orthopedic table" width="320" height="220" loading="lazy" /></div>
         <div class="eq-overlay">
-          <div class="eq-name">Orthopedic Table</div>
-          <div class="eq-cost">$490,000</div>
+          <div class="eq-name">Ortho Table</div>
+          <div class="eq-cost">$130,000</div>
           <div class="eq-cases">67 cases/year</div>
         </div>
       </div>
@@ -110,7 +112,7 @@
         <div class="eq-img-wrap"><img src="images/eq-ultrasound.jpg" alt="Ultrasound system" width="320" height="220" loading="lazy" /></div>
         <div class="eq-overlay">
           <div class="eq-name">Ultrasound</div>
-          <div class="eq-cost">$330,000</div>
+          <div class="eq-cost">$200,000</div>
           <div class="eq-cases">94 cases/year</div>
         </div>
       </div>
@@ -219,17 +221,6 @@
   </div>
 </section>
 
-<!-- FEATURED ARTICLES -->
-<section class="articles">
-  <div class="section-inner">
-    <div class="center-head">
-      <a href="https://www.advisory.com/daily-briefing/2019/01/28/kaiser-share" target="_blank" rel="noopener noreferrer" class="advisory-btn">
-        Read Advisory Board's Take On What We Do
-      </a>
-    </div>
-  </div>
-</section>
-
 <!-- SERVICE LINES -->
 <section class="service-lines">
   <div class="section-inner">
@@ -266,34 +257,6 @@
 
     </div>
     <p class="sl-callout">The decision to share equipment is completely yours.<br>The work of getting it there, on time and ready to go, is completely ours.</p>
-  </div>
-</section>
-
-<!-- RESULTS -->
-<section class="results">
-  <div class="section-inner">
-    <div class="center-head">
-      <div class="section-eyebrow">Proven results</div>
-      <h2 class="section-title">Real savings. Delivered.</h2>
-      <p class="section-sub center">From first share to full program maturity, Cohealo grows with your system to buy less, rent less, off-board aging assets, and reduce the size of your equipment fleets.</p>
-    </div>
-    <div class="result-cards">
-      <div class="result-card">
-        <div class="result-pct">75%</div>
-        <div class="result-label">Reduction in capital purchases</div>
-        <div class="result-desc">3 shared units replaced 12 individually purchased devices across urology clinics</div>
-      </div>
-      <div class="result-card">
-        <div class="result-pct">65%</div>
-        <div class="result-label">Reduction in rental expenses</div>
-        <div class="result-desc">377 laser rentals avoided by borrowing owned, in-network equipment</div>
-      </div>
-      <div class="result-card">
-        <div class="result-pct">33%</div>
-        <div class="result-label">Reduction in fleet operating costs</div>
-        <div class="result-desc">15 video towers at end of life refreshed with only 10 new units</div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -394,6 +357,24 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
   var EMAILJS_TEMPLATE_ID = 'template_erzykvv';  // Email Templates tab
 
   emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+  var watchOverviewBtn = document.getElementById('watchOverviewBtn');
+  var heroVideoTile = document.getElementById('heroVideoTile');
+  var heroVideoFrame = document.getElementById('heroVideoFrame');
+
+  if (watchOverviewBtn && heroVideoTile && heroVideoFrame) {
+    var heroVideoSrc = heroVideoFrame.src;
+    watchOverviewBtn.addEventListener('click', function () {
+      var isOpen = heroVideoTile.classList.toggle('is-open');
+      watchOverviewBtn.setAttribute('aria-expanded', String(isOpen));
+      if (isOpen) {
+        heroVideoFrame.src = heroVideoSrc + '&autoplay=1';
+        heroVideoTile.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        heroVideoFrame.src = heroVideoSrc;
+      }
+    });
+  }
 
   document.getElementById('ctaForm').addEventListener('submit', function (e) {
     e.preventDefault();
