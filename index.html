@@ -39,7 +39,9 @@
     <p>Health systems spend millions on capital equipment that sits idle. Cohealo's platform and logistics services turn that idle inventory into shared savings, eliminating new capital purchases, reducing rentals, and cutting operating costs.</p>
     <div class="hero-actions">
       <a href="#roi" class="btn-primary">Get a free ROI evaluation</a>
-      <a href="https://vimeo.com/321739702" target="_blank" rel="noopener noreferrer" class="link-video"><i aria-hidden="true" data-lucide="play-circle"></i>Watch Cohealo Explained (49 sec)<span class="visually-hidden"> (opens in a new tab)</span></a>
+    </div>
+    <div class="hero-video">
+      <iframe src="https://player.vimeo.com/video/321739702?dnt=1&title=0&byline=0&portrait=0" title="See how Cohealo works" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
     </div>
     <ul class="hero-proof" role="list" aria-label="Results across Cohealo programs">
       <li>
@@ -493,33 +495,35 @@
 <section class="cta-band" id="roi">
   <h2>Find out how much sharing could save your health system.</h2>
   <p>We'll reach out to answer any questions, and kick off a free ROI evaluation.</p>
-  <form id="ctaForm" novalidate>
-    <div class="cta-form">
-      <div class="cta-field">
-        <label class="visually-hidden" for="cta-name">Your name</label>
-        <input type="text" id="cta-name" name="name" placeholder="Your name" autocomplete="name" aria-describedby="err-cta-name" />
-        <div class="field-error" role="alert" id="err-cta-name">Please enter your name.</div>
+  <div class="cta-wrap">
+    <form id="ctaForm" novalidate>
+      <div class="cta-form">
+        <div class="cta-field">
+          <label class="visually-hidden" for="cta-name">Your name</label>
+          <input type="text" id="cta-name" name="name" placeholder="Your name" autocomplete="name" aria-describedby="err-cta-name" />
+          <div class="field-error" role="alert" id="err-cta-name">Please enter your name.</div>
+        </div>
+        <div class="cta-field">
+          <label class="visually-hidden" for="cta-email">Your work email</label>
+          <input type="email" id="cta-email" name="email" placeholder="Your work email" autocomplete="email" inputmode="email" aria-describedby="err-cta-email" />
+          <div class="field-error" role="alert" id="err-cta-email">Please enter a valid work email.</div>
+        </div>
+        <button type="submit" id="ctaSubmitBtn">
+          <span class="spinner" id="ctaSpinner"></span>
+          <span id="ctaBtnLabel">Get my free ROI evaluation</span>
+        </button>
       </div>
-      <div class="cta-field">
-        <label class="visually-hidden" for="cta-email">Your work email</label>
-        <input type="email" id="cta-email" name="email" placeholder="Your work email" autocomplete="email" inputmode="email" aria-describedby="err-cta-email" />
-        <div class="field-error" role="alert" id="err-cta-email">Please enter a valid work email.</div>
-      </div>
-      <button type="submit" id="ctaSubmitBtn">
-        <span class="spinner" id="ctaSpinner"></span>
-        <span id="ctaBtnLabel">Get my free ROI evaluation</span>
-      </button>
+    </form>
+
+    <div class="alert alert-success" role="status" id="ctaSuccessMsg">
+      <h3>Message sent</h3>
+      <p>Thank you! A member of our team will follow up shortly.</p>
     </div>
-  </form>
 
-  <div class="alert alert-success" role="status" id="ctaSuccessMsg">
-    <h3>Message sent</h3>
-    <p>Thanks for reaching out; someone from our team will follow up shortly.</p>
-  </div>
-
-  <div class="alert alert-error" role="alert" id="ctaErrorMsg">
-    <h3>Delivery failed</h3>
-    <p id="ctaErrorDetail">Something went wrong. Please try again or email us directly at <a href="mailto:info@cohealo.com">info@cohealo.com</a>.</p>
+    <div class="alert alert-error" role="alert" id="ctaErrorMsg">
+      <h3>Delivery failed</h3>
+      <p id="ctaErrorDetail">Please try again or email us at <a href="mailto:info@cohealo.com">info@cohealo.com</a>.</p>
+    </div>
   </div>
 </section>
 
