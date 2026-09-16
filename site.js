@@ -15,49 +15,88 @@
     document.addEventListener('click', function (e) {
       if (nav.classList.contains('is-open') && !nav.contains(e.target)) setOpen(false);
     });
-    var onScroll = function () { nav.classList.toggle('is-scrolled', window.scrollY > 8); };
+    var header = nav.parentElement;
+    var hero = document.querySelector('.hero');
+    var navHeight = nav.offsetHeight;
+    var navFrame = null;
+    // Hero rect is read live: web fonts change its height after this script runs.
+    var onScroll = function () {
+      navFrame = null;
+      var pastHero = hero ? hero.getBoundingClientRect().bottom <= navHeight : window.scrollY > 8;
+      nav.classList.toggle('is-scrolled', window.scrollY > 8);
+      header.classList.toggle('is-dark', pastHero);
+    };
     onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-  }
-
-  var items = document.querySelectorAll('.sl-item');
-  var closeAll = function (except) {
-    items.forEach(function (it) {
-      if (it === except) return;
-      it.classList.remove('is-open');
-      it.querySelector('.sl-chip').setAttribute('aria-expanded', 'false');
-    });
-  };
-  items.forEach(function (it) {
-    var btn = it.querySelector('.sl-chip');
-    btn.addEventListener('click', function () {
-      var open = !it.classList.contains('is-open');
-      closeAll(it);
-      it.classList.toggle('is-open', open);
-      btn.setAttribute('aria-expanded', String(open));
-    });
-  });
-  if (items.length) {
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAll(); });
-    document.addEventListener('click', function (e) { if (!e.target.closest('.sl-item')) closeAll(); });
+    window.addEventListener('scroll', function () { if (navFrame === null) navFrame = requestAnimationFrame(onScroll); }, { passive: true });
+    window.addEventListener('resize', function () { navHeight = nav.offsetHeight; onScroll(); });
   }
 
   var supportsIO = 'IntersectionObserver' in window;
 
-  // Step connectors draw once the path is in view.
-  var paths = document.querySelectorAll('.steps, .process-grid');
-  if (paths.length) {
-    if (!supportsIO || reduceMotion) {
-      paths.forEach(function (p) { p.classList.add('is-seen'); });
-    } else {
-      var pathObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) {
-          if (en.isIntersecting) { en.target.classList.add('is-seen'); pathObserver.unobserve(en.target); }
-        });
-      }, { threshold: 0.35 });
-      paths.forEach(function (p) { pathObserver.observe(p); });
+  // [data-scroll] elements get --p: 0 as their top enters the viewport, 1 as their bottom leaves it.
+  var tracked = [];
+  var frame = null;
+  var vh = window.innerHeight;
+  // Read all rects before writing any style so one frame costs one layout.
+  var update = function () {
+    frame = null;
+    var rects = tracked.map(function (t) { return t.el.getBoundingClientRect(); });
+    tracked.forEach(function (t, i) {
+      var r = rects[i];
+      var p = (vh - r.top) / (vh + r.height);
+      p = p < 0 ? 0 : p > 1 ? 1 : p;
+      if (Math.abs(p - t.last) < 0.0005) return;
+      t.last = p;
+      t.el.style.setProperty('--p', p.toFixed(4));
+      if (t.fn) t.fn(p, r);
+    });
+  };
+  var schedule = function () { if (frame === null) frame = requestAnimationFrame(update); };
+  var motion = {
+    track: function (el, fn) {
+      if (!el) return;
+      if (reduceMotion) { el.style.setProperty('--p', '1'); if (fn) fn(1, el.getBoundingClientRect()); return; }
+      tracked.push({ el: el, fn: fn, last: -1 });
+      schedule();
+    },
+    reveal: function (el, fn, threshold) {
+      if (!el) return;
+      var done = function () { el.classList.add('is-in'); if (fn) fn(el); };
+      if (!supportsIO || reduceMotion) { done(); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { io.disconnect(); done(); } });
+      }, { threshold: threshold == null ? 0.2 : threshold });
+      io.observe(el);
+    },
+    tween: function (duration, onFrame, onDone) {
+      var start = null;
+      var step = function (now) {
+        if (start === null) start = now;
+        var t = Math.min((now - start) / duration, 1);
+        onFrame(t);
+        if (t < 1) requestAnimationFrame(step); else if (onDone) onDone();
+      };
+      requestAnimationFrame(step);
     }
+  };
+  document.querySelectorAll('[data-scroll]').forEach(function (el) { motion.track(el); });
+  var heroBand = document.querySelector('.pg-index .hero');
+  if (heroBand && !reduceMotion) {
+    motion.track(heroBand, function (p, r) {
+      heroBand.style.setProperty('--hero-y', Math.max(0, -r.top) * 0.28 + 'px');
+    });
   }
+  document.querySelectorAll('.reveal').forEach(function (el) { motion.reveal(el); });
+  initGs();
+  initLg();
+  initSl();
+  if (tracked.length) {
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', function () { vh = window.innerHeight; tracked.forEach(function (t) { t.last = -1; }); schedule(); });
+  }
+
+  // Step connectors draw once the path is in view.
+  document.querySelectorAll('.process-grid').forEach(function (p) { motion.reveal(p, null, .35); });
 
   // Hero figures count up once. The final text is authored in the markup, so the
   // number is parsed from it and restored verbatim when the count ends.
@@ -91,4 +130,91 @@
     }, { threshold: 0.5 });
     stats.forEach(function (s) { statObserver.observe(s); });
   }
+
+// The spine fills on a clock, one second per step, once the list is seen.
+function initGs() {
+  var steps = document.querySelector('body.pg-index .gs-steps');
+  if (!steps) return;
+  motion.reveal(steps, function () {
+    if (reduceMotion) { steps.style.setProperty('--q', '1'); return; }
+    motion.tween(4000, function (t) { steps.style.setProperty('--q', t.toFixed(4)); });
+  }, .25);
+}
+
+function initLg() {
+  var section = document.querySelector('body.pg-index .solve');
+  if (!section) return;
+  var steps = section.querySelectorAll('.lg-step');
+  var cards = section.querySelectorAll('.solve-card');
+  var last = steps.length - 1;
+
+  var applyState = function (activeIndex, allActive) {
+    steps.forEach(function (s, i) {
+      s.classList.toggle('is-lit', allActive || i <= activeIndex);
+      s.classList.toggle('is-active', !allActive && i === activeIndex);
+    });
+    cards.forEach(function (c, i) {
+      c.classList.toggle('is-active', allActive || i === activeIndex);
+      c.classList.toggle('is-done', !allActive && i < activeIndex);
+    });
+  };
+
+  if (reduceMotion) {
+    steps.forEach(function (s) { s.style.setProperty('--f', '1'); });
+    applyState(last, true);
+    return;
+  }
+
+  var easeOut = function (t) { return 1 - Math.pow(1 - t, 3); };
+  var leg = function (i) {
+    var from = steps[i - 1];
+    motion.tween(1000, function (t) { from.style.setProperty('--f', easeOut(t).toFixed(4)); }, function () {
+      applyState(i, false);
+      if (i < last) leg(i + 1);
+    });
+  };
+  applyState(-1, false);
+  motion.reveal(section.querySelector('.solve-grid') || section, function () { applyState(0, false); leg(1); }, .2);
+}
+
+// Selecting a service line swaps the panel list; the unit marker flips legs so
+// every change reads as the same equipment moving, without implying a real route.
+function initSl() {
+  var explorer = document.querySelector('body.pg-index .sl-explorer');
+  if (!explorer) return;
+  var buttons = explorer.querySelectorAll('.sl-specialty');
+  var unit = explorer.querySelector('.sl-unit');
+  var unitName = explorer.querySelector('.sl-unit-name');
+  var status = explorer.querySelector('.sl-status');
+  var stop = 0;
+
+  var select = function (slug) {
+    var btn = explorer.querySelector('.sl-specialty[data-specialty="' + slug + '"]');
+    if (!btn || btn.getAttribute('aria-pressed') === 'true') return btn;
+    var panel;
+    buttons.forEach(function (b) {
+      var on = b === btn;
+      b.setAttribute('aria-pressed', String(on));
+      var p = document.getElementById(b.getAttribute('aria-controls'));
+      p.hidden = !on;
+      if (on) panel = p;
+    });
+    stop = 1 - stop;
+    unit.style.setProperty('--stop', stop);
+    unitName.textContent = panel.getAttribute('data-unit');
+    status.textContent = panel.querySelector('.sl-panel-title').textContent;
+    return btn;
+  };
+
+  explorer.addEventListener('click', function (e) {
+    var btn = e.target.closest('.sl-specialty');
+    if (btn) { select(btn.getAttribute('data-specialty')); return; }
+    var tag = e.target.closest('.sl-tag');
+    if (tag) {
+      var target = select(tag.getAttribute('data-specialty'));
+      if (target) target.focus();
+    }
+  });
+}
+
 })();
