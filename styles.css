@@ -158,8 +158,12 @@ body.pg-equipment-tracking {
   body.pg-company .mission-text .section-sub:not(:last-child) { margin-bottom: 20px; }
   body.pg-company .values .section-sub { max-width: 560px; }
   body.pg-company .mission { background: #fff; }
-  body.pg-company .mission-inner { max-width: 760px; margin: 0 auto; }
-  body.pg-company .mission-text .section-sub.lede { font-size: 20px; color: var(--text-dark); line-height: 1.6; }
+  body.pg-company .mission-inner { display: flex; gap: 80px; align-items: flex-start; max-width: 1060px; margin: 0 auto; }
+  body.pg-company .mission-text { flex: 1.2; }
+  body.pg-company .mission-quote { flex: 1; background: var(--dark-blue); border-radius: 16px; padding: 40px; position: relative; overflow: hidden; margin-top: 34px; }
+  body.pg-company .mission-quote::before { content: '"'; font-family: 'Inter', sans-serif; font-size: 120px; font-weight: 700; color: rgba(91,194,244,.15); position: absolute; top: -10px; left: 16px; line-height: 1; }
+  body.pg-company .mission-quote p { font-size: 18px; color: #b8d8f4; line-height: 1.75; font-style: italic; position: relative; }
+  body.pg-company .mission-quote cite { display: block; margin-top: 16px; font-size: 13px; color: var(--light-blue); font-style: normal; font-weight: 600; position: relative; }
   body.pg-company .leadership { background: var(--bg-gray); }
   body.pg-company .leadership-intro { font-size: 16px; color: var(--text-mid); line-height: 1.75; max-width: 600px; margin-bottom: 48px; }
   body.pg-company .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
@@ -588,6 +592,7 @@ body.pg-index .gs-steps.is-in .gs-step p { transition-delay: calc(var(--gs-at) *
   body.pg-capital-planning .process-step:not(:last-child)::after, body.pg-capital-planning .process-step:not(:last-child)::before { display: none; }
 
   /* company.html */
+  body.pg-company .mission-inner { flex-direction: column; }
   body.pg-company .values-grid { grid-template-columns: 1fr; }
   body.pg-company .team-grid { grid-template-columns: repeat(2, 1fr); }
   body.pg-company .hero-stats { flex-direction: column; }
