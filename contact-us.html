@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Contact Us · Cohealo</title>
-<meta name="description" content="Get in touch with Cohealo for a free ROI assessment, customer support, or general inquiries." />
+<meta name="description" content="Get in touch with Cohealo for a free ROI evaluation, customer support, or general inquiries." />
 <link rel="shortcut icon" href="images/favicon-large.png" type="image/png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,10 +22,9 @@
   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
   <ul id="site-nav" class="nav-links">
     <li><a href="index.html">Equipment Sharing</a></li>
-    <li><a href="equipment-tracking.html">Utilization Tracking</a></li>
+    <li><a href="equipment-tracking.html">Equipment Tracking</a></li>
     <li><a href="capital-planning.html">Capital Planning</a></li>
     <li class="nav-right"><a href="company.html">Company</a></li>
-    <li class="nav-right"><a href="contact-us.html" aria-current="page">Contact</a></li>
   </ul>
 </nav>
 </header>
@@ -41,7 +40,7 @@
     <div class="info-card contact-panel">
       <div class="info-icon"><i aria-hidden="true" data-lucide="handshake"></i></div>
       <h2>Considering a partnership with us?</h2>
-      <p>Learn more about our platform and services and get a free ROI assessment.</p>
+      <p>Learn more about our platform and services and get a free ROI evaluation.</p>
       <form id="partnershipForm" novalidate>
         <div class="form-row">
           <div class="form-group">
@@ -107,7 +106,7 @@
         <p class="form-note"><span class="req">*</span> Required</p>
         <button type="submit" class="form-submit" id="partnershipSubmitBtn">
           <span class="spinner" id="partnershipSpinner"></span>
-          <span id="partnershipBtnLabel">Submit</span>
+          <span id="partnershipBtnLabel">Send message</span>
         </button>
       </form>
 
@@ -224,6 +223,7 @@
     var label   = document.getElementById('partnershipBtnLabel');
     btn.disabled = true;
     spinner.classList.add('show');
+    var labelText = label.textContent;
     label.textContent = 'Sending…';
 
     var params = {
@@ -247,7 +247,7 @@
       .catch(function (err) {
         btn.disabled = false;
         spinner.classList.remove('show');
-        label.textContent = 'Submit';
+        label.textContent = labelText;
         console.error('EmailJS', err);
         document.getElementById('partnershipErrorMsg').classList.add('show');
       });
