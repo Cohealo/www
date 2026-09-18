@@ -22,7 +22,7 @@
   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
   <ul id="site-nav" class="nav-links">
     <li><a href="index.html">Equipment Sharing</a></li>
-    <li><a href="equipment-tracking.html" aria-current="page">Utilization Tracking</a></li>
+    <li><a href="equipment-tracking.html" aria-current="page">Equipment Tracking</a></li>
     <li><a href="capital-planning.html">Capital Planning</a></li>
     <li class="nav-right"><a href="company.html">Company</a></li>
   </ul>
@@ -33,25 +33,16 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-tag">Equipment tracking</div>
     <h1>Take control of your most<br><em>critical capital assets</em></h1>
     <p>Tracking equipment utilization across facilities and service lines unlocks insights to avoid new capital purchases, reduce equipment rentals, identify opportunities to relocate assets between facilities, and identify opportunities to off-board underused assets.</p>
-  </div>
-</section>
-
-<!-- LARGE STATEMENT -->
-<section class="validate">
-  <div class="section-inner validate-inner">
-    <h2>Validate or refute the case for new equipment purchases.</h2>
   </div>
 </section>
 
 <!-- HOW IT WORKS -->
 <section class="how-section">
   <div class="section-inner">
-    <div class="eyebrow center">How it works</div>
-    <h2 class="section-title center">Four data sources. One accurate picture.</h2>
-    <p class="section-sub center">No manual data entry. No dedicated time from clinical staff. Cohealo combines what your systems already know with what only your people do.</p>
+    <h2 class="section-title center">Validate or refute the case for new equipment purchases.</h2>
+    <p class="section-sub center">Four data sources, one accurate picture. No manual data entry and no dedicated time from clinical staff: Cohealo combines what your systems already know with what only your people do.</p>
     <div class="how-steps">
       <div class="how-step">
         <div class="how-num"><span class="how-num-icon"><i aria-hidden="true" data-lucide="database"></i></span>Case data import</div>
@@ -61,17 +52,17 @@
       <div class="how-step">
         <div class="how-num"><span class="how-num-icon"><i aria-hidden="true" data-lucide="stethoscope"></i></span>Equipment inventory</div>
         <h3>What you actually own</h3>
-        <p>Capital equipment counts by make and model, validated against your asset register and the realities your clinical staff see on the ground.</p>
+        <p>Capital equipment tracked as individual assets, validated against your asset register and the realities your clinical staff see on the ground.</p>
       </div>
       <div class="how-step">
         <div class="how-num"><span class="how-num-icon"><i aria-hidden="true" data-lucide="notebook-pen"></i></span>Physician preferences</div>
         <h3>What each case requires</h3>
-        <p>Business logic mapping procedures to the equipment they require, specific to each facility, service line, and individual physician.</p>
+        <p>Business logic maps procedures to the equipment they require, specific to each facility, service line, and individual physician.</p>
       </div>
       <div class="how-step">
         <div class="how-num"><span class="how-num-icon"><i aria-hidden="true" data-lucide="lightbulb"></i></span>Local knowledge</div>
         <h3>What only your team knows</h3>
-        <p>Departmental review to verify accuracy and surface the idiosyncrasies no data feed alone would catch.</p>
+        <p>Departmental review verifies accuracy and surfaces the idiosyncrasies no data feed alone would catch.</p>
       </div>
     </div>
   </div>
@@ -80,7 +71,6 @@
 <!-- STAKEHOLDER VALUE -->
 <section class="stake-section">
   <div class="section-inner">
-    <div class="eyebrow center">Who uses it</div>
     <h2 class="section-title center">Built for every team that touches a capital request.</h2>
     <p class="section-sub center">Finance, supply chain, value analysis, and HTM all rely on the same utilization data, just for different decisions.</p>
     <div class="stake-grid">
@@ -113,19 +103,19 @@
   <div class="wp-inner">
     <div class="wp-text">
       <h3>Utilization tracking is step one</h3>
-      <div class="wp-stat-label">Acting on the data, relocating and cross-scheduling equipment, not just monitoring it, is where the larger savings show up.</div>
+      <div class="wp-stat-label">The larger savings come from acting on the data: relocating and cross-scheduling equipment, not just monitoring it.</div>
     </div>
     <div class="wp-text">
       <h3>The rest of the roadmap</h3>
-      <p>Our whitepaper walks through how finance, supply chain, value analysis, and HTM teams each put utilization data to work, and why organizations that act on it, relocating and cross-scheduling equipment instead of just monitoring it, tend to see meaningfully greater savings than tracking and analysis deliver on their own.</p>
-      <a href="resources/medical-equipment-blind-spot-cohealo.pdf" class="wp-btn" target="_blank" rel="noopener noreferrer">Download The Whitepaper</a>
+      <p>Our white paper walks through how finance, supply chain, value analysis, and HTM teams each put utilization data to work, and why the organizations that act on that data tend to see meaningfully greater savings than tracking and analysis deliver on their own.</p>
+      <a href="resources/medical-equipment-blind-spot-cohealo.pdf" class="wp-btn" target="_blank" rel="noopener noreferrer">Download the white paper (PDF, 1 MB)<span class="visually-hidden"> (opens in a new tab)</span></a>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta-band">
-  <h2>Let us tell you more.</h2>
+  <h2>Find out how much sharing could save your health system.</h2>
   <p>We'll email you to start the conversation.</p>
   <div class="cta-wrap">
     <form id="ctaForm" novalidate>
@@ -142,7 +132,7 @@
         </div>
         <button type="submit" id="ctaSubmitBtn">
           <span class="spinner" id="ctaSpinner"></span>
-          <span id="ctaBtnLabel">Submit</span>
+          <span id="ctaBtnLabel">Get my free ROI evaluation</span>
         </button>
       </div>
     </form>
@@ -238,6 +228,7 @@
     var label   = document.getElementById('ctaBtnLabel');
     btn.disabled = true;
     spinner.classList.add('show');
+    var labelText = label.textContent;
     label.textContent = 'Sending…';
 
     var params = {
@@ -256,7 +247,7 @@
       .catch(function (err) {
         btn.disabled = false;
         spinner.classList.remove('show');
-        label.textContent = 'Submit';
+        label.textContent = labelText;
         console.error('EmailJS', err);
         document.getElementById('ctaErrorMsg').classList.add('show');
       });
