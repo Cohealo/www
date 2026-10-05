@@ -43,11 +43,12 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-text">
+    <div class="eyebrow">Clinical Asset Optimization</div>
     <h1>Do more with the equipment<br><em>you already own</em></h1>
     <p>Health systems spend millions on capital equipment that sits idle. Cohealo's platform and logistics services turn that idle inventory into shared savings, eliminating new capital purchases, reducing rentals, and cutting operating costs.</p>
     <div class="hero-actions">
-      <button type="button" class="hero-cta" id="watchOverviewBtn" aria-expanded="false" aria-controls="heroVideoTile">Watch a quick overview</button>
-      <a href="https://www.advisory.com/daily-briefing/2019/01/28/kaiser-share" target="_blank" rel="noopener noreferrer" class="hero-link">Advisory Board Praises Our Savings</a>
+      <button type="button" class="hero-cta" id="watchOverviewBtn" aria-expanded="false" aria-controls="heroVideoTile">Watch a Quick Overview</button>
+      <a href="https://www.advisory.com/daily-briefing/2019/01/28/kaiser-share" target="_blank" rel="noopener noreferrer" class="hero-link">Advisory Board Commends Our Savings</a>
     </div>
   </div>
   <div class="hero-stats">
@@ -65,7 +66,7 @@
     </div>
     <div class="stat-card">
       <div class="stat-num">99.98%</div>
-      <div class="stat-label">Logistics accuracy across 7,000+ moves</div>
+      <div class="stat-label">Logistics accuracy over <span data-moves>9,847</span>+ moves</div>
     </div>
     <div class="hero-video" id="heroVideoTile">
       <iframe id="heroVideoFrame" src="https://player.vimeo.com/video/321739702?dnt=1&title=0&byline=0&portrait=0" title="See how Cohealo works" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
@@ -153,7 +154,7 @@
       </div>
       <div class="platform-card reveal" style="transition-delay: .2s">
         <div class="pc-vis pc-move" aria-hidden="true">
-          <div class="pc-cap">Example: Friday request</div>
+          <div class="pc-cap">Example: single request</div>
           <div class="pc-body">
             <div class="pc-route">
               <span class="pc-stop">North</span>
@@ -187,7 +188,7 @@
 <section class="solve" id="logistics">
   <div class="solve-inner">
     <div class="solve-head">
-      <h2 class="section-title">We have orchestrated over 10,000 equipment moves across hundreds of healthcare facilities, with an on-time and damage-free rate of 99.9%</h2>
+      <h2 class="section-title">We have orchestrated over <span data-moves>9,847</span> moves across hundreds of healthcare facilities, with an on-time and damage-free rate of 99.9%</h2>
     </div>
 
     <ol class="solve-grid">
@@ -265,7 +266,7 @@
   <div class="section-inner">
     <div class="center-head reveal">
       <h2 class="section-title">One pool of equipment, shared by every site and specialty</h2>
-      <p class="section-sub center">Hospitals, ASCs, and medical offices draw from the same high-cost equipment. Choose a service line to see what it uses and which other specialties share it.</p>
+      <p class="section-sub center">Hospitals, ASCs, and medical offices draw from the same high-cost equipment. Choose a service line for examples of equipment it uses.</p>
     </div>
 
     <div class="sl-explorer reveal">
@@ -279,9 +280,7 @@
         <button type="button" class="sl-specialty" data-specialty="vascular" aria-pressed="false" aria-controls="sl-panel-vascular">Vascular</button>
         <button type="button" class="sl-specialty" data-specialty="neurosurgery" aria-pressed="false" aria-controls="sl-panel-neurosurgery">Neurosurgery</button>
         <button type="button" class="sl-specialty" data-specialty="plastics" aria-pressed="false" aria-controls="sl-panel-plastics">Plastics</button>
-        <button type="button" class="sl-specialty" data-specialty="podiatry" aria-pressed="false" aria-controls="sl-panel-podiatry">Podiatry</button>
         <button type="button" class="sl-specialty" data-specialty="dermatology" aria-pressed="false" aria-controls="sl-panel-dermatology">Dermatology</button>
-        <button type="button" class="sl-specialty" data-specialty="dentistry" aria-pressed="false" aria-controls="sl-panel-dentistry">Dentistry</button>
       </div>
 
       <div class="sl-panel">
@@ -319,9 +318,9 @@
             <li><span class="sl-eq-name">Distraction System</span></li>
             <li><span class="sl-eq-name">Jackson Table</span><span class="sl-tags"><button type="button" class="sl-tag" data-specialty="neurosurgery"><span class="visually-hidden">Also used in </span>Neurosurgery</button></span></li>
             <li><span class="sl-eq-name">Limb Positioner</span></li>
-            <li><span class="sl-eq-name">C-Arm</span><span class="sl-tags"><button type="button" class="sl-tag" data-specialty="podiatry"><span class="visually-hidden">Also used in </span>Podiatry</button></span></li>
+            <li><span class="sl-eq-name">C-Arm</span></li>
             <li><span class="sl-eq-name">Surgical Navigation System</span><span class="sl-tags"><button type="button" class="sl-tag" data-specialty="head-and-neck"><span class="visually-hidden">Also used in </span>Head &amp; Neck</button><button type="button" class="sl-tag" data-specialty="neurosurgery"><span class="visually-hidden">Also used in </span>Neurosurgery</button></span></li>
-            <li><span class="sl-eq-name">Tourniquet System</span><span class="sl-tags"><button type="button" class="sl-tag" data-specialty="podiatry"><span class="visually-hidden">Also used in </span>Podiatry</button></span></li>
+            <li><span class="sl-eq-name">Tourniquet System</span></li>
           </ul>
         </div>
         <div class="sl-panel-content" id="sl-panel-general-surgery" data-unit="Intelligent Flow System" hidden>
@@ -364,7 +363,7 @@
             <li><span class="sl-eq-name">Imaging Table</span></li>
             <li><span class="sl-eq-name">IVUS Ultrasound System</span></li>
             <li><span class="sl-eq-name">Radiofrequency Generator</span></li>
-            <li><span class="sl-eq-name">Ultrasound System</span><span class="sl-tags"><button type="button" class="sl-tag" data-specialty="podiatry"><span class="visually-hidden">Also used in </span>Podiatry</button></span></li>
+            <li><span class="sl-eq-name">Ultrasound System</span></li>
           </ul>
         </div>
         <div class="sl-panel-content" id="sl-panel-neurosurgery" data-unit="Jackson Table" hidden>
@@ -385,17 +384,8 @@
             <li><span class="sl-eq-name">Doppler Flow Detector</span></li>
             <li><span class="sl-eq-name">PAL Liposuction System</span></li>
             <li><span class="sl-eq-name">PAL LipoTower</span></li>
-            <li><span class="sl-eq-name">Ultrasonic Aspirator System</span><span class="sl-tags"><button type="button" class="sl-tag" data-specialty="dentistry"><span class="visually-hidden">Also used in </span>Dentistry</button></span></li>
+            <li><span class="sl-eq-name">Ultrasonic Aspirator System</span></li>
             <li><span class="sl-eq-name">Ultrasonic Surgical Aspiration System</span></li>
-          </ul>
-        </div>
-        <div class="sl-panel-content" id="sl-panel-podiatry" data-unit="Mini C-Arm" hidden>
-          <h3 class="sl-panel-title">Podiatry <span class="sl-count">4 equipment types</span></h3>
-          <ul class="sl-eq-list">
-            <li><span class="sl-eq-name">Coblation System</span></li>
-            <li><span class="sl-eq-name">Mini C-Arm</span><span class="sl-tags"><button type="button" class="sl-tag" data-specialty="orthopedics"><span class="visually-hidden">Also used in </span>Orthopedics</button></span></li>
-            <li><span class="sl-eq-name">Tourniquet System</span><span class="sl-tags"><button type="button" class="sl-tag" data-specialty="orthopedics"><span class="visually-hidden">Also used in </span>Orthopedics</button></span></li>
-            <li><span class="sl-eq-name">Ultrasound System</span><span class="sl-tags"><button type="button" class="sl-tag" data-specialty="vascular"><span class="visually-hidden">Also used in </span>Vascular</button></span></li>
           </ul>
         </div>
         <div class="sl-panel-content" id="sl-panel-dermatology" data-unit="Pulsed-Dye Laser" hidden>
@@ -405,58 +395,11 @@
             <li><span class="sl-eq-name">Yag Laser</span></li>
           </ul>
         </div>
-        <div class="sl-panel-content" id="sl-panel-dentistry" data-unit="Holmium Laser" hidden>
-          <h3 class="sl-panel-title">Dentistry <span class="sl-count">2 equipment types</span></h3>
-          <ul class="sl-eq-list">
-            <li><span class="sl-eq-name">Holmium Laser</span><span class="sl-tags"><button type="button" class="sl-tag" data-specialty="urology"><span class="visually-hidden">Also used in </span>Urology</button></span></li>
-            <li><span class="sl-eq-name">Ultrasonic Aspirator System</span><span class="sl-tags"><button type="button" class="sl-tag" data-specialty="plastics"><span class="visually-hidden">Also used in </span>Plastics</button></span></li>
-          </ul>
-        </div>
         <p class="sl-panel-note">Tagged equipment is also used by another service line. Select a tag to see that list.</p>
       </div>
     </div>
 
     <p class="sl-callout">The decision to share equipment is completely yours.<br>The work of getting it there, on time and ready to go, is completely ours.</p>
-  </div>
-</section>
-
-<!-- HOW IT WORKS -->
-<section class="how">
-  <div class="section-inner">
-    <div class="split">
-      <div class="split-text gs-intro">
-        <h2 class="section-title">You can be live in 30 days</h2>
-        <p class="section-sub">Onboarding is fast, low-lift, and designed to deliver savings from the very first share.</p>
-      </div>
-      <div class="split-fig gs-steps">
-        <span class="gs-spine" aria-hidden="true"><span class="gs-spine-fill"></span></span>
-        <div class="gs-step">
-          <div class="step-num">Step 1<span class="gs-num-fill" aria-hidden="true">Step 1</span></div>
-          <h3>Equipment inventory</h3>
-          <p>Cohealo inventories and tags all in-scope, shareable equipment across your facilities.</p>
-        </div>
-        <div class="gs-step">
-          <div class="step-num">Step 2<span class="gs-num-fill" aria-hidden="true">Step 2</span></div>
-          <h3>Case data import</h3>
-          <p>We establish a simple, secure, twice-daily feed from your OR management system.</p>
-        </div>
-        <div class="gs-step">
-          <div class="step-num">Step 3<span class="gs-num-fill" aria-hidden="true">Step 3</span></div>
-          <h3>Opportunity analysis</h3>
-          <p>Our team works with yours to identify sharing opportunities and model year-one savings.</p>
-        </div>
-        <div class="gs-step">
-          <div class="step-num">Step 4<span class="gs-num-fill" aria-hidden="true">Step 4</span></div>
-          <h3>Logistics launch</h3>
-          <p>Cohealo recruits logistics partners and begins executing shared equipment moves immediately.</p>
-        </div>
-        <div class="gs-step gs-step--live">
-          <div class="step-num">Live<span class="gs-num-fill" aria-hidden="true">Live</span></div>
-          <h3>Ongoing Sharing</h3>
-          <p>Cohealo works with your supply chain and clinical staff to maximize savings.</p>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -479,7 +422,7 @@
         </div>
         <button type="submit" id="ctaSubmitBtn">
           <span class="spinner" id="ctaSpinner"></span>
-          <span id="ctaBtnLabel">Get my free ROI evaluation</span>
+          <span id="ctaBtnLabel">Contact Me</span>
         </button>
       </div>
     </form>

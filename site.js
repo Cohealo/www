@@ -1,4 +1,8 @@
 (function () {
+  // Total equipment moves to date. This is the one place to update it; every [data-moves] element shows it.
+  var MOVES = 9847;
+  document.querySelectorAll('[data-moves]').forEach(function (el) { el.textContent = MOVES.toLocaleString('en-US'); });
+
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var nav = document.querySelector('nav');
   var toggle = document.querySelector('.nav-toggle');
@@ -87,7 +91,6 @@
     });
   }
   document.querySelectorAll('.reveal').forEach(function (el) { motion.reveal(el); });
-  initGs();
   initLg();
   initSl();
   if (tracked.length) {
@@ -130,16 +133,6 @@
     }, { threshold: 0.5 });
     stats.forEach(function (s) { statObserver.observe(s); });
   }
-
-// The spine fills on a clock, one second per step, once the list is seen.
-function initGs() {
-  var steps = document.querySelector('body.pg-index .gs-steps');
-  if (!steps) return;
-  motion.reveal(steps, function () {
-    if (reduceMotion) { steps.style.setProperty('--q', '1'); return; }
-    motion.tween(4000, function (t) { steps.style.setProperty('--q', t.toFixed(4)); });
-  }, .25);
-}
 
 function initLg() {
   var section = document.querySelector('body.pg-index .solve');
