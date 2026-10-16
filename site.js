@@ -6,6 +6,21 @@
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var nav = document.querySelector('nav');
   var toggle = document.querySelector('.nav-toggle');
+
+  // QA badge: warning triangle + "QA" pill after the last left-side nav item, on the QA host only.
+  var leftItems = document.querySelectorAll('.nav-links > li:not(.nav-right)');
+  if (location.hostname === 'qa-www.cohealo.com' && leftItems.length) {
+    var qa = document.createElement('li');
+    qa.className = 'nav-qa';
+    qa.title = 'QA environment. The warning icon and pill will not appear in production.';
+    // viewBox is cropped to the triangle so its drawn height matches the pill's.
+    qa.innerHTML = '<svg class="nav-qa-icon" viewBox="1 2.5 22 19" aria-hidden="true" focusable="false">' +
+      '<path class="nav-qa-tri" d="M12 2.5 23 21.5H1Z"/>' +
+      '<path class="nav-qa-mark" d="M11 9h2v6h-2zm0 8h2v2h-2z"/></svg>' +
+      '<span class="nav-qa-pill">QA</span>';
+    var lastLeft = leftItems[leftItems.length - 1];
+    lastLeft.parentNode.insertBefore(qa, lastLeft.nextSibling);
+  }
   if (nav && toggle) {
     var setOpen = function (open) {
       nav.classList.toggle('is-open', open);

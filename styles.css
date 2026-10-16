@@ -51,6 +51,11 @@ body.pg-equipment-tracking {
   .nav-links a:hover { color: var(--mid-blue); }
   .nav-links a[aria-current="page"] { color: var(--mid-blue); font-weight: 600; }
   .nav-toggle { display: none; }
+  .nav-qa { display: flex; align-items: center; gap: 4px; cursor: default; }
+  .nav-qa-icon { height: 22px; width: auto; aspect-ratio: 22 / 19; flex: none; }
+  .nav-qa-tri { fill: #f5c400; }
+  .nav-qa-mark { fill: #1a1a1a; }
+  .nav-qa-pill { display: inline-flex; align-items: center; height: 22px; padding: 0 10px; border-radius: 999px; background: #d62828; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .04em; }
   nav.is-scrolled { box-shadow: 0 8px 24px -16px rgba(13,27,46,.35); }
   .site-header { position: sticky; top: 0; z-index: 100; }
   .site-header.is-dark nav { background: var(--brand-blue); border-bottom-color: rgba(255,255,255,.08); }
@@ -551,6 +556,7 @@ body.pg-index .sl-panel-note { margin-top: 16px; font-size: 13px; color: var(--t
   .nav-links li.nav-right { margin-left: 0; }
   .nav-links li + li { border-top: 1px solid var(--bg-gray); }
   .nav-links a { display: block; padding: 14px 0; font-size: 16px; }
+  .nav-qa { padding: 14px 0; }
   .site-header.is-dark .nav-toggle { color: #fff; background: transparent; border-color: rgba(255,255,255,.35); }
   .site-header.is-dark .nav-links { background: var(--brand-blue); border-bottom-color: rgba(255,255,255,.08); }
   .site-header.is-dark .nav-links li + li { border-top-color: rgba(255,255,255,.08); }
