@@ -535,6 +535,11 @@ body.pg-index .sl-panel-note { margin-top: 16px; font-size: 13px; color: var(--t
   body.pg-privacy-terms .contact-card .detail { font-size: 14px; color: #fff; margin-bottom: 6px; }
   body.pg-privacy-terms .contact-card .detail span { color: #7bbcf5; font-weight: 600; }
 
+/* ---- 404 page: footer pinned to bottom; photo fills the space between hero and footer ---- */
+  body.pg-not-found { min-height: 100vh; display: flex; flex-direction: column; }
+  body.pg-not-found main { flex: 1 0 auto; display: flex; flex-direction: column; }
+  body.pg-not-found main::after { content: ""; flex: 1; background: url(images/clinical-staff.jpg) center -100px / cover no-repeat; }
+
 /* ---- Responsive (max-width: 900px) ---- */
 @media (max-width: 900px) {
   .wp-inner { flex-direction: column; text-align: center; }
